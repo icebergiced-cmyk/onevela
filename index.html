@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>วันเวลา · One Vela — อมตะ ชลบุรี | บ้านคือเวลาที่เราใช้กับคนที่รัก</title>
+<meta name="description" content="โครงการบ้านวันเวลา (One Vela) อมตะ ชลบุรี — บ้านเดี่ยว บ้านแฝด ทาวน์โฮม 4 แบบ เริ่มต้น 1.99 ล้านบาท เลือกแบบบ้านที่ใช่สำหรับครอบครัวคุณ" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4EEE2;
+  --cream-soft:#FBF7EE;
+  --card:#FCFAF3;
+  --sage:#9DAE88;
+  --sage-soft:#CAD5BC;
+  --sage-deep:#7B8E64;
+  --green:#2C3A28;
+  --green-2:#3B4D35;
+  --ink:#26301E;
+  --muted:#6E7563;
+  --line:rgba(44,58,40,.12);
+  --line-strong:rgba(44,58,40,.22);
+  --shadow:0 18px 50px -24px rgba(44,58,40,.45);
+  --shadow-soft:0 10px 30px -18px rgba(44,58,40,.35);
+  --ease:cubic-bezier(.22,.7,.2,1);
+  --serif:'Noto Serif Thai','Cormorant Garamond',serif;
+  --sans:'Noto Sans Thai',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--sans);
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:var(--serif)}
+.eyebrow{
+  font-size:13px;letter-spacing:.32em;text-transform:uppercase;
+  color:var(--sage-deep);font-weight:600;margin-bottom:18px;
+}
+
+/* ---------- NAV ---------- */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:80;
+  background:rgba(244,238,226,.72);
+  backdrop-filter:saturate(160%) blur(18px);
+  -webkit-backdrop-filter:saturate(160%) blur(18px);
+  border-bottom:1px solid transparent;
+  transition:border-color .4s,background .4s;
+}
+.nav.scrolled{border-bottom-color:var(--line);background:rgba(244,238,226,.86)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
+.nav-logo img{height:30px;width:auto}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-size:14.5px;color:var(--ink);opacity:.82;transition:opacity .25s;position:relative}
+.nav-links a:hover{opacity:1}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:1.5px;background:var(--sage-deep);transform:scaleX(0);transform-origin:left;transition:transform .3s var(--ease)}
+.nav-links a:hover::after{transform:scaleX(1)}
+.nav-cta{
+  background:var(--green);color:var(--cream-soft);
+  padding:9px 20px;border-radius:999px;font-size:14px;font-weight:500;
+  transition:transform .25s var(--ease),background .25s;
+}
+.nav-cta:hover{background:var(--green-2);transform:translateY(-1px)}
+.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px}
+.nav-burger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:.3s}
+
+/* ---------- HERO ---------- */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 14s var(--ease) forwards}
+@keyframes heroZoom{to{transform:scale(1)}}
+.hero-bg::after{content:"";position:absolute;inset:0;background:
+  linear-gradient(180deg,rgba(20,28,18,.55) 0%,rgba(20,28,18,.25) 35%,rgba(20,28,18,.6) 100%);}
+.hero-inner{position:relative;z-index:2;padding:90px 24px 0;max-width:920px}
+.hero-logo{height:34px;width:auto;margin:0 auto 30px;filter:brightness(0) invert(1);opacity:.95}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(52px,9vw,116px);line-height:.98;letter-spacing:.01em;text-shadow:0 4px 40px rgba(0,0,0,.35)}
+.hero .sub{font-size:clamp(17px,2.4vw,23px);font-weight:300;margin-top:24px;opacity:.96;text-shadow:0 2px 20px rgba(0,0,0,.4)}
+.hero .loc{margin-top:14px;font-size:13.5px;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:42px}
+.btn{
+  display:inline-flex;align-items:center;gap:9px;
+  padding:14px 30px;border-radius:999px;font-size:15.5px;font-weight:500;
+  transition:transform .28s var(--ease),background .28s,box-shadow .28s,color .28s;cursor:pointer;border:none;font-family:var(--sans);
+}
+.btn-primary{background:var(--cream-soft);color:var(--green)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
+.btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(6px)}
+.btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
+.btn-dark{background:var(--green);color:var(--cream-soft)}
+.btn-dark:hover{background:var(--green-2);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.btn-line{background:#06C755;color:#fff}
+.btn-line:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(6,199,85,.6)}
+.scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;opacity:.7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
+.scroll-hint .dot{width:22px;height:36px;border:1.5px solid rgba(255,255,255,.6);border-radius:14px;position:relative}
+.scroll-hint .dot::after{content:"";position:absolute;top:7px;left:50%;transform:translateX(-50%);width:3px;height:7px;background:#fff;border-radius:2px;animation:scrolly 1.6s infinite}
+@keyframes scrolly{0%{opacity:0;transform:translate(-50%,0)}40%{opacity:1}100%{opacity:0;transform:translate(-50%,12px)}}
+
+/* ---------- SECTIONS ---------- */
+section{position:relative}
+.sec{padding:108px 0}
+.sec-head{text-align:center;max-width:760px;margin:0 auto 64px}
+.sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.1;color:var(--green)}
+.sec-head p{font-size:18px;color:var(--muted);margin-top:18px;font-weight:300}
+
+/* concept */
+.concept{background:var(--cream-soft)}
+.concept-quote{text-align:center;max-width:900px;margin:0 auto}
+.concept-quote .mark{font-family:var(--serif);font-size:64px;color:var(--sage);line-height:0;display:block;margin-bottom:10px}
+.concept-quote h2{font-family:var(--serif);font-weight:600;font-size:clamp(28px,4.4vw,46px);line-height:1.32;color:var(--green)}
+.concept-quote .en{color:var(--muted);font-weight:300;margin-top:22px;font-size:17px;font-style:italic;font-family:'Cormorant Garamond',var(--serif)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:72px;border-top:1px solid var(--line);padding-top:54px}
+.stat{text-align:center}
+.stat .num{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.5vw,50px);color:var(--green);line-height:1}
+.stat .lab{font-size:14px;color:var(--muted);margin-top:10px;letter-spacing:.02em}
+
+/* ---------- TYPE GRID ---------- */
+.types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
+.tcard{
+  position:relative;background:var(--card);border-radius:24px;overflow:hidden;
+  box-shadow:var(--shadow-soft);cursor:pointer;
+  transition:transform .5s var(--ease),box-shadow .5s var(--ease);
+  border:1px solid var(--line);
+}
+.tcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+.tcard-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--sage-soft)}
+.tcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.tcard:hover .tcard-img img{transform:scale(1.06)}
+.tcard-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(20,28,18,.55) 100%)}
+.badge{position:absolute;top:16px;left:16px;z-index:3;background:var(--green);color:var(--cream-soft);font-size:12px;font-weight:600;letter-spacing:.08em;padding:7px 14px;border-radius:999px;text-transform:uppercase}
+.tcard-code{position:absolute;bottom:16px;left:20px;z-index:3;color:#fff}
+.tcard-code .c{font-family:var(--serif);font-size:15px;letter-spacing:.3em;opacity:.85}
+.tcard-code .n{font-family:'Cormorant Garamond',var(--serif);font-size:30px;font-weight:600;letter-spacing:.12em;line-height:1}
+.tcard-body{padding:26px 28px 30px}
+.tcard-body .cat{font-size:13px;color:var(--sage-deep);font-weight:600;letter-spacing:.04em}
+.tcard-body .tag{font-family:var(--serif);font-size:21px;color:var(--green);margin-top:6px;line-height:1.4;font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
+.chip{font-size:13px;color:var(--ink);background:var(--cream);border:1px solid var(--line);padding:6px 13px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.tcard-foot{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px}
+.price .p-lab{font-size:12.5px;color:var(--muted)}
+.price .p-val{font-family:var(--serif);font-size:27px;color:var(--green);font-weight:600;line-height:1.1}
+.price .p-val small{font-size:15px;font-weight:500}
+.see{display:inline-flex;align-items:center;gap:6px;color:var(--sage-deep);font-weight:600;font-size:14.5px;transition:gap .3s}
+.tcard:hover .see{gap:11px}
+
+/* ---------- DETAIL VIEW ---------- */
+#detail{display:none;padding-top:64px}
+#detail.active{display:block;animation:fadeUp .6s var(--ease)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.dt-back{position:sticky;top:64px;z-index:40;background:rgba(244,238,226,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.dt-back .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.back-btn{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--green);font-weight:500;cursor:pointer;transition:gap .3s}
+.back-btn:hover{gap:12px}
+.dt-jump{display:flex;gap:22px}
+.dt-jump a{font-size:14px;color:var(--muted);transition:color .25s}
+.dt-jump a:hover{color:var(--green)}
+.dt-hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.dt-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dt-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.2) 0%,rgba(20,28,18,.15) 40%,rgba(20,28,18,.75) 100%)}
+.dt-hero-inner{position:relative;z-index:2;padding-bottom:54px}
+.dt-hero .c{font-family:var(--serif);letter-spacing:.34em;font-size:15px;opacity:.9}
+.dt-hero h2{font-family:'Cormorant Garamond',var(--serif);font-size:clamp(54px,10vw,120px);font-weight:600;letter-spacing:.06em;line-height:.95;margin:6px 0 4px}
+.dt-hero .cat{font-size:18px;font-weight:300;opacity:.95}
+.dt-hero .price{margin-top:18px;font-family:var(--serif);font-size:24px}
+.dt-hero .price small{font-weight:400;font-size:15px;opacity:.85}
+
+.spec-band{background:var(--green);color:var(--cream-soft)}
+.spec-band .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;padding:44px 24px}
+.spec{text-align:center}
+.spec .ic{font-size:24px;margin-bottom:10px;display:block}
+.spec .v{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1}
+.spec .k{font-size:13px;opacity:.78;margin-top:7px}
+
+.dt-feats{padding:96px 0}
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-top:14px}
+.feat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;gap:18px;align-items:flex-start;transition:transform .4s var(--ease),box-shadow .4s}
+.feat:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}
+.feat .fi{flex:0 0 46px;height:46px;border-radius:13px;background:var(--sage-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px}
+.feat h4{font-family:var(--serif);font-size:19px;color:var(--green);font-weight:600;margin-bottom:5px}
+.feat p{font-size:15px;color:var(--muted);line-height:1.6}
+
+.gallery-sec{padding:40px 0 96px}
+.gallery-sec.alt{background:var(--cream-soft)}
+.gsec-title{display:flex;align-items:baseline;gap:14px;margin-bottom:30px}
+.gsec-title h3{font-family:var(--serif);font-size:28px;color:var(--green);font-weight:600}
+.gsec-title span{font-size:14px;color:var(--muted)}
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;grid-auto-flow:dense}
+.gitem{position:relative;border-radius:16px;overflow:hidden;background:var(--sage-soft);cursor:zoom-in;box-shadow:var(--shadow-soft)}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gitem:hover img{transform:scale(1.05)}
+.gitem .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 14px;color:#fff;font-size:14px;font-weight:500;background:linear-gradient(180deg,transparent,rgba(20,28,18,.72));opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
+.gitem:hover .cap{opacity:1;transform:none}
+.gitem .zoom{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.85);display:flex;align-items:center;justify-content:center;color:var(--green);font-size:15px;opacity:0;transition:.3s}
+.gitem:hover .zoom{opacity:1}
+.span-6{grid-column:span 6}.span-4{grid-column:span 4}.span-8{grid-column:span 8}.span-12{grid-column:span 12}
+.gitem.tall{aspect-ratio:auto}
+.dt-cta{text-align:center;padding:30px 0 96px}
+
+/* ---------- AMENITIES ---------- */
+.amen{background:var(--green);color:var(--cream-soft)}
+.amen .sec-head h2{color:#fff}
+.amen .sec-head p{color:rgba(251,247,238,.75)}
+.amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
+.amen-cell{background:var(--green);padding:38px 30px;transition:background .4s}
+.amen-cell:hover{background:var(--green-2)}
+.amen-cell .ic{font-size:30px;margin-bottom:16px}
+.amen-cell h4{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:8px}
+.amen-cell p{font-size:14.5px;color:rgba(251,247,238,.72);line-height:1.6}
+.amen-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
+.amen-photos .gitem{aspect-ratio:4/3}
+
+/* ---------- LOCATION ---------- */
+.loc-sec{background:var(--cream-soft)}
+.loc-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.loc-list{list-style:none;margin-top:8px}
+.loc-list li{padding:18px 0;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:flex-start}
+.loc-list li:last-child{border-bottom:none}
+.loc-list .ic{flex:0 0 40px;height:40px;border-radius:11px;background:var(--sage-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:19px}
+.loc-list b{display:block;color:var(--green);font-size:16px;font-family:var(--serif);font-weight:600}
+.loc-list span{font-size:14.5px;color:var(--muted)}
+.loc-map{border-radius:22px;overflow:hidden;box-shadow:var(--shadow);background:var(--card);border:1px solid var(--line)}
+.loc-map .map-photo{aspect-ratio:4/3;position:relative;cursor:pointer;overflow:hidden}
+.loc-map .map-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.loc-map .map-photo:hover img{transform:scale(1.05)}
+.loc-map .map-cta{padding:22px 26px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.loc-map .map-cta b{font-family:var(--serif);color:var(--green);font-size:18px}
+.loc-map .map-cta span{font-size:13.5px;color:var(--muted)}
+
+/* ---------- CONTACT ---------- */
+.contact{background:var(--green);color:var(--cream-soft);text-align:center}
+.contact .eyebrow{color:var(--sage-soft)}
+.contact h2{font-family:var(--serif);font-size:clamp(32px,5vw,54px);font-weight:600;line-height:1.12}
+.contact p.lead{font-size:18px;font-weight:300;color:rgba(251,247,238,.82);margin-top:18px;max-width:620px;margin-left:auto;margin-right:auto}
+.contact-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+.contact-info{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:880px;margin:64px auto 0;border-top:1px solid rgba(255,255,255,.16);padding-top:46px}
+.cinfo .ic{font-size:24px;margin-bottom:12px}
+.cinfo b{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-soft);margin-bottom:8px;font-weight:600}
+.cinfo p{font-size:15.5px;color:rgba(251,247,238,.9);line-height:1.6}
+
+/* ---------- FOOTER ---------- */
+.foot{background:#1F2A1B;color:rgba(251,247,238,.6);padding:54px 0 40px;text-align:center}
+.foot img{height:30px;margin:0 auto 22px;filter:brightness(0) invert(1);opacity:.9}
+.foot .co{color:rgba(251,247,238,.85);font-size:15px;font-weight:500}
+.foot .meta{font-size:13px;margin-top:10px;line-height:1.8}
+.foot .copy{font-size:12.5px;margin-top:22px;opacity:.6}
+
+/* ---------- LIGHTBOX ---------- */
+.lb{position:fixed;inset:0;z-index:200;background:rgba(18,24,16,.94);display:none;align-items:center;justify-content:center}
+.lb.open{display:flex;animation:lbfade .3s ease}
+@keyframes lbfade{from{opacity:0}to{opacity:1}}
+.lb img{max-width:90vw;max-height:84vh;object-fit:contain;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.lb-cap{position:absolute;bottom:28px;left:0;right:0;text-align:center;color:#fff;font-size:15px;opacity:.9}
+.lb-x,.lb-nav{position:absolute;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;cursor:pointer;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .25s}
+.lb-x:hover,.lb-nav:hover{background:rgba(255,255,255,.25)}
+.lb-x{top:24px;right:24px;width:46px;height:46px;font-size:22px}
+.lb-nav{top:50%;transform:translateY(-50%);width:52px;height:52px;font-size:24px}
+.lb-prev{left:24px}.lb-next{right:24px}
+.lb-count{position:absolute;top:30px;left:30px;color:rgba(255,255,255,.7);font-size:14px;letter-spacing:.1em}
+
+/* scroll progress */
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--sage-soft),var(--sage),var(--sage-deep));width:0;z-index:95;transition:width .12s linear}
+/* map */
+.map-frame{width:100%;height:360px;border:0;display:block;filter:saturate(.92) contrast(1.02)}
+/* register */
+.register{background:var(--cream-soft)}
+.reg-wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:42px;align-items:stretch}
+.reg-aside{background:var(--green);color:var(--cream-soft);border-radius:24px;padding:50px 42px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.reg-aside .eyebrow{color:var(--sage-soft)}
+.reg-aside h2{font-family:var(--serif);font-size:clamp(28px,3.6vw,42px);font-weight:600;line-height:1.14;margin-bottom:16px}
+.reg-aside p{color:rgba(251,247,238,.82);font-weight:300;font-size:16px}
+.reg-perks{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:15px}
+.reg-perks li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(251,247,238,.92)}
+.reg-perks .ic{flex:0 0 22px;color:var(--sage-soft);font-size:17px}
+.reg-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:42px;box-shadow:var(--shadow-soft)}
+.reg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:13.5px;color:var(--ink);margin-bottom:7px;font-weight:500}
+.field label .req{color:#b4543a}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line-strong);border-radius:12px;font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff;transition:border-color .25s,box-shadow .25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sage-deep);box-shadow:0 0 0 3px rgba(123,142,100,.2)}
+.field textarea{resize:vertical;min-height:80px}
+.hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
+.reg-submit{width:100%;justify-content:center;margin-top:6px;font-size:16px;padding:16px}
+.reg-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:14px;line-height:1.6}
+.reg-success{display:none;text-align:center;padding:36px 10px}
+.reg-success.show{display:block;animation:fadeUp .5s var(--ease)}
+.reg-success .ok{width:66px;height:66px;border-radius:50%;background:var(--sage-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:32px;margin:0 auto 20px}
+.reg-success h3{font-family:var(--serif);font-size:27px;color:var(--green);margin-bottom:10px}
+.reg-success p{color:var(--muted)}
+/* floating brochure button */
+.fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:9px;background:var(--green);color:var(--cream-soft);padding:13px 21px;border-radius:999px;font-size:14.5px;font-weight:500;box-shadow:var(--shadow);transition:transform .35s var(--ease),background .3s,opacity .35s;opacity:0;transform:translateY(20px) scale(.92);pointer-events:none}
+.fab.show{opacity:1;transform:none;pointer-events:auto}
+.fab:hover{background:var(--green-2);transform:translateY(-3px)}
+/* reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.from-left{transform:translateX(-40px)}
+.reveal.from-right{transform:translateX(40px)}
+.reveal.zoom-in{transform:scale(.94)}
+.reveal.in{opacity:1;transform:none}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:880px){
+  .nav-links{display:none}
+  .nav-cta{display:none}
+  .nav-burger{display:flex}
+  .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(244,238,226,.97);backdrop-filter:blur(18px);padding:8px 0;border-bottom:1px solid var(--line)}
+  .nav-links.open a{padding:15px 24px;width:100%}
+  .nav-links.open a::after{display:none}
+  .types-grid{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr);gap:36px 24px}
+  .feat-grid{grid-template-columns:1fr}
+  .spec-band .wrap{grid-template-columns:repeat(3,1fr);gap:30px 16px}
+  .amen-grid{grid-template-columns:1fr}
+  .amen-photos{grid-template-columns:1fr}
+  .loc-grid{grid-template-columns:1fr;gap:36px}
+  .contact-info{grid-template-columns:1fr;gap:34px}
+  .dt-jump{display:none}
+  .gal .gitem{grid-column:span 12 !important}
+  .sec{padding:78px 0}
+  .dt-hero{height:64vh}
+  .reg-wrap{grid-template-columns:1fr;gap:24px}
+  .reg-card{padding:30px 24px}
+  .reg-aside{padding:38px 30px}
+  .map-frame{height:300px}
+}
+@media(max-width:520px){
+  .stats{grid-template-columns:1fr}
+  .spec-band .wrap{grid-template-columns:repeat(2,1fr)}
+  .hero-cta .btn{flex:1 1 auto}
+}
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<a class="fab" id="fab" href="assets/brochure-onevela.pdf" download>📄 ดาวน์โหลดโบรชัวร์</a>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <div class="nav-logo" onclick="goHome();scrollTo({top:0,behavior:'smooth'})">
+      <img src="assets/logo-horizontal-trim.png" alt="One Vela — Amata Chonburi" />
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#concept" onclick="navJump(event,'concept')">โครงการ</a>
+      <a href="#types" onclick="navJump(event,'types')">แบบบ้าน</a>
+      <a href="#amenities" onclick="navJump(event,'amenities')">ส่วนกลาง</a>
+      <a href="#location" onclick="navJump(event,'location')">ทำเล</a>
+      <a href="#register" onclick="navJump(event,'register')">ลงทะเบียน</a>
+      <a href="#contact" onclick="navJump(event,'contact')">ติดต่อ</a>
+    </nav>
+    <a class="nav-cta" href="#register" onclick="navJump(event,'register')">นัดชมโครงการ</a>
+    <div class="nav-burger" id="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="home">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img id="heroImg" alt="โครงการวันเวลา อมตะ ชลบุรี" />
+    </div>
+    <div class="hero-inner">
+      <img class="hero-logo" src="assets/logo-horizontal-trim.png" alt="One Vela" />
+      <h1 class="serif">วันเวลา</h1>
+      <p class="sub">บ้านไม่ใช่แค่สี่ผนัง — แต่คือเวลาที่เราใช้กับคนที่รัก</p>
+      <p class="loc">One Vela · Amata — Chonburi</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary" onclick="navJump(event,'types')">ดูแบบบ้านทั้งหมด</button>
+        <a class="btn btn-ghost" href="#register" onclick="navJump(event,'register')">นัดเยี่ยมชมโครงการ</a>
+        <a class="btn btn-ghost" href="assets/brochure-onevela.pdf" download>📄 ดาวน์โหลดโบรชัวร์</a>
+      </div>
+    </div>
+    <div class="scroll-hint"><div class="dot"></div><span>เลื่อนลง</span></div>
+  </section>
+
+  <!-- CONCEPT -->
+  <section class="sec concept" id="concept">
+    <div class="wrap">
+      <div class="concept-quote reveal">
+        <span class="mark">“</span>
+        <h2 class="serif">ที่วันเวลา เราออกแบบบ้าน<br/>เพื่อให้ทุกช่วงเวลามีค่ายิ่งขึ้น</h2>
+        <p class="en">A home is not just four walls — it's the time we share with the ones we love.</p>
+      </div>
+      <div class="stats reveal" id="stats">
+        <div class="stat"><div class="num"><span class="count" data-to="483">0</span></div><div class="lab">หลังทั้งโครงการ</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="4">0</span></div><div class="lab">แบบบ้านให้เลือก</div></div>
+        <div class="stat"><div class="num serif">฿1.99–4.99</div><div class="lab">ล้านบาท</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="3">0</span> นาที</div><div class="lab">ถึงส่วนกลาง</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="sec" id="types">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">เลือกแบบบ้านของคุณ</div>
+        <h2 class="serif">บ้านทุกแบบ ออกแบบเพื่อชีวิตที่ต่างกัน</h2>
+        <p>คลิกเพื่อดูรายละเอียด สเปก และภาพภายใน-ภายนอกแบบเต็มทุกมุม</p>
+      </div>
+      <div class="types-grid" id="typesGrid"></div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section class="sec amen" id="amenities">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow" style="color:var(--sage-soft)">ส่วนกลาง &amp; ไลฟ์สไตล์</div>
+        <h2 class="serif">ใช้ชีวิตทุกวัน ในแบบที่ดีกว่า</h2>
+        <p>พื้นที่ส่วนกลางที่ออกแบบให้ทุกครอบครัวได้พักผ่อน ออกกำลังกาย และใช้เวลาร่วมกัน</p>
+      </div>
+      <div class="amen-grid reveal">
+        <div class="amen-cell"><div class="ic">🌳</div><h4>สวนส่วนกลาง 2 จุด</h4><p>พื้นที่สีเขียวรวมกว่า 400 ตร.ม. สำหรับพักผ่อนและกิจกรรมครอบครัว</p></div>
+        <div class="amen-cell"><div class="ic">🏋️</div><h4>ฟิตเนส 24 ชม.</h4><p>ห้องออกกำลังกายพร้อมเครื่อง 8 เครื่อง เปิดให้ใช้ตลอดวัน</p></div>
+        <div class="amen-cell"><div class="ic">🛝</div><h4>สนามเด็กเล่น 2 จุด</h4><p>พื้นที่ปลอดภัยให้เด็ก ๆ ได้วิ่งเล่นใกล้บ้าน</p></div>
+        <div class="amen-cell"><div class="ic">🛡️</div><h4>รปภ. &amp; CCTV 24 ชม.</h4><p>ระบบรักษาความปลอดภัยและกล้องวงจรปิดตลอด 24 ชั่วโมง</p></div>
+        <div class="amen-cell"><div class="ic">🚶</div><h4>เดิน 3 นาทีถึงส่วนกลาง</h4><p>ทุกหลังอยู่ในระยะเดินถึงพื้นที่ส่วนกลางได้สบาย</p></div>
+        <div class="amen-cell"><div class="ic">🛣️</div><h4>ถนนกว้าง 8 เมตร</h4><p>ถนนภายในกว้างขวาง เว้นระยะระหว่างบ้านอย่างน้อย 3 เมตร</p></div>
+      </div>
+      <div class="amen-photos reveal" id="amenPhotos"></div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="sec loc-sec" id="location">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div class="eyebrow">ทำเลที่ตั้ง</div>
+        <h2 class="serif">อมตะ ชลบุรี — ศูนย์กลางที่เชื่อมต่อทุกการเดินทาง</h2>
+      </div>
+      <div class="loc-grid">
+        <ul class="loc-list reveal">
+          <li><div class="ic">🏭</div><div><b>ใกล้นิคมอุตสาหกรรมอมตะซิตี้ ชลบุรี</b><span>เดินทางสะดวกสำหรับคนทำงานในเขตอุตสาหกรรมและครอบครัว</span></div></li>
+          <li><div class="ic">🛣️</div><div><b>เชื่อมมอเตอร์เวย์ &amp; ทางเลี่ยงเมือง</b><span>เข้า-ออกกรุงเทพฯ พัทยา และตัวเมืองชลบุรีได้รวดเร็ว</span></div></li>
+          <li><div class="ic">🛒</div><div><b>ใกล้ห้างสรรพสินค้า ตลาด และร้านสะดวกซื้อ</b><span>สิ่งอำนวยความสะดวกครบครันในระยะใกล้</span></div></li>
+          <li><div class="ic">🏥</div><div><b>ใกล้โรงพยาบาลและสถานศึกษา</b><span>อุ่นใจเรื่องสุขภาพและการเรียนของลูกหลาน</span></div></li>
+          <li><div class="ic">📍</div><div><b>ที่ตั้งโครงการ</b><span>89 หมู่ 1 ต.คลองตำหรุ อ.เมืองชลบุรี จ.ชลบุรี 20000</span></div></li>
+        </ul>
+        <div class="loc-map reveal from-right">
+          <iframe class="map-frame" loading="lazy" title="แผนที่โครงการวันเวลา อมตะ ชลบุรี"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=100.9846%2C13.4330%2C101.0046%2C13.4530&layer=mapnik&marker=13.4429775%2C100.9945572"></iframe>
+          <div class="map-cta">
+            <div><b>นำทางสู่โครงการ</b><br/><span>89 หมู่ 1 ต.คลองตำหรุ อ.เมืองชลบุรี</span></div>
+            <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=13.4429775,100.9945572" target="_blank" rel="noopener">🧭 นำทางด้วย Google Maps</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGISTER -->
+  <section class="sec register" id="register">
+    <div class="wrap">
+      <div class="reg-wrap">
+        <aside class="reg-aside reveal from-left">
+          <div class="eyebrow">ลงทะเบียนรับสิทธิ์</div>
+          <h2 class="serif">ลงทะเบียนเพื่อรับสิทธิพิเศษ และนัดเข้าชมโครงการ</h2>
+          <p>กรอกข้อมูลสั้น ๆ ทีมงานจะติดต่อกลับเพื่อนัดหมายเข้าชมบ้านจริง พร้อมโปรโมชั่นและคำปรึกษาเรื่องสินเชื่อ</p>
+          <ul class="reg-perks">
+            <li><span class="ic">✓</span><span>รับโปรโมชั่นพิเศษเฉพาะผู้ลงทะเบียน</span></li>
+            <li><span class="ic">✓</span><span>นัดชมบ้านตัวอย่างทุกแบบ ตามเวลาที่สะดวก</span></li>
+            <li><span class="ic">✓</span><span>คำปรึกษาสินเชื่อ–ผ่อนดาวน์ ครบวงจร</span></li>
+            <li><span class="ic">✓</span><span>รับโบรชัวร์และผังโครงการฉบับเต็ม</span></li>
+          </ul>
+        </aside>
+        <div class="reg-card reveal from-right">
+          <form id="regForm" novalidate>
+            <input type="text" name="_gotcha" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <div class="reg-row">
+              <div class="field"><label>ชื่อ–นามสกุล <span class="req">*</span></label><input name="ชื่อ" required placeholder="ชื่อของคุณ" /></div>
+              <div class="field"><label>เบอร์โทรศัพท์ <span class="req">*</span></label><input name="เบอร์โทร" required type="tel" inputmode="tel" placeholder="08x-xxx-xxxx" /></div>
+            </div>
+            <div class="reg-row">
+              <div class="field"><label>แบบบ้านที่สนใจ</label>
+                <select name="แบบบ้านที่สนใจ">
+                  <option value="">— เลือก —</option>
+                  <option>A · ULTRA — บ้านเดี่ยว 2 ชั้น</option>
+                  <option>B · MINUTE — บ้านเดี่ยวชั้นเดียว</option>
+                  <option>C · SECOND — บ้านแฝด</option>
+                  <option>D · MOMENT — ทาวน์โฮม</option>
+                  <option>ยังไม่แน่ใจ / ขอคำแนะนำ</option>
+                </select>
+              </div>
+              <div class="field"><label>งบประมาณ</label>
+                <select name="งบประมาณ">
+                  <option value="">— เลือก —</option>
+                  <option>ไม่เกิน 2.5 ล้าน</option>
+                  <option>2.5 – 3.5 ล้าน</option>
+                  <option>3.5 – 4.5 ล้าน</option>
+                  <option>4.5 ล้านขึ้นไป</option>
+                </select>
+              </div>
+            </div>
+            <div class="reg-row">
+              <div class="field"><label>ช่วงเวลาที่สะดวกให้ติดต่อ</label>
+                <select name="ช่วงเวลาติดต่อ">
+                  <option value="">— เลือก —</option>
+                  <option>เวลาใดก็ได้</option>
+                  <option>เช้า (09:00–12:00)</option>
+                  <option>บ่าย (12:00–16:00)</option>
+                  <option>เย็น (16:00–18:00)</option>
+                  <option>วันหยุด เสาร์–อาทิตย์</option>
+                </select>
+              </div>
+              <div class="field"><label>อีเมล (ถ้ามี)</label><input name="อีเมล" type="email" placeholder="you@email.com" /></div>
+            </div>
+            <div class="field"><label>ข้อความเพิ่มเติม</label><textarea name="ข้อความ" placeholder="เช่น อยากนัดวันเสาร์-อาทิตย์ / สอบถามโปรโมชั่น"></textarea></div>
+            <button type="submit" class="btn btn-dark reg-submit" id="regSubmit">ลงทะเบียน · ให้ทีมงานติดต่อกลับ</button>
+            <p class="reg-note">ข้อมูลของคุณจะถูกส่งให้ทีมขายวันเวลาเท่านั้น เพื่อใช้ติดต่อกลับ</p>
+          </form>
+          <div class="reg-success" id="regSuccess">
+            <div class="ok">✓</div>
+            <h3>ขอบคุณสำหรับการลงทะเบียน</h3>
+            <p>ทีมงานวันเวลาจะติดต่อกลับโดยเร็วที่สุด<br/>หากต้องการความช่วยเหลือด่วน โทร 092-787-4222</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="sec contact" id="contact">
+    <div class="wrap">
+      <div class="reveal">
+        <div class="eyebrow">นัดชมโครงการ</div>
+        <h2 class="serif">มาสัมผัสบ้านจริง<br/>ที่วันเวลา อมตะ ชลบุรี</h2>
+        <p class="lead">ทีมงานพร้อมพาคุณชมบ้านตัวอย่างทุกแบบ และให้คำปรึกษาเรื่องสินเชื่อแบบครบวงจร</p>
+        <div class="contact-cta">
+          <a class="btn btn-primary" href="tel:0927874222">📞 โทร 092-787-4222</a>
+          <a class="btn btn-line" href="https://line.me/R/ti/p/%40605odwus" target="_blank" rel="noopener">💬 เพิ่มเพื่อนทาง LINE</a>
+          <a class="btn btn-ghost" href="assets/brochure-onevela.pdf" download>📄 ดาวน์โหลดโบรชัวร์</a>
+        </div>
+      </div>
+      <div class="contact-info reveal">
+        <div class="cinfo"><div class="ic">📞</div><b>โทรศัพท์</b><p>092-787-4222<br/>เวลา 09:00–18:00 น. ทุกวัน</p></div>
+        <div class="cinfo"><div class="ic">📍</div><b>สำนักงานขาย</b><p>89 หมู่ 1 ต.คลองตำหรุ<br/>อ.เมืองชลบุรี จ.ชลบุรี 20000</p></div>
+        <div class="cinfo"><div class="ic">✉️</div><b>อีเมล / LINE</b><p>twobuild.d@gmail.com<br/>LINE: @605odwus</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ DETAIL ============ -->
+<section id="detail">
+  <div class="dt-back">
+    <div class="wrap">
+      <div class="back-btn" onclick="goHome()">‹ แบบบ้านทั้งหมด</div>
+      <div class="dt-jump">
+        <a onclick="jumpDetail('dt-ext')">ภายนอก</a>
+        <a onclick="jumpDetail('dt-int')">ภายใน</a>
+        <a onclick="jumpDetail('dt-plan')">ผังบ้าน</a>
+        <a href="#contact" onclick="goHome();setTimeout(()=>navJump(event,'contact'),60)">ติดต่อ</a>
+      </div>
+    </div>
+  </div>
+  <div id="detailBody"></div>
+</section>
+
+<!-- FOOTER -->
+<footer class="foot">
+  <div class="wrap">
+    <img src="assets/logo-horizontal-trim.png" alt="One Vela" />
+    <div class="co">บริษัท ทู บิลด์ ดีเวลลอปเม้นท์ จำกัด · TWO BUILD DEVELOPMENT CO., LTD.</div>
+    <div class="meta">โครงการวันเวลา อมตะ ชลบุรี (One Vela) · ใบอนุญาตจัดสรรเลขที่ 78/2568<br/>89 หมู่ 1 ต.คลองตำหรุ อ.เมืองชลบุรี จ.ชลบุรี 20000 · โทร 092-787-4222</div>
+    <div class="copy">© 2026 Two Build Development Co., Ltd. สงวนลิขสิทธิ์ · ภาพประกอบเพื่อการนำเสนอ รายละเอียดอาจเปลี่ยนแปลงได้</div>
+  </div>
+</footer>
+
+<!-- LIGHTBOX -->
+<div class="lb" id="lb">
+  <div class="lb-count" id="lbCount"></div>
+  <div class="lb-x" onclick="closeLb()">✕</div>
+  <div class="lb-nav lb-prev" onclick="lbStep(-1)">‹</div>
+  <img id="lbImg" alt="" />
+  <div class="lb-nav lb-next" onclick="lbStep(1)">›</div>
+  <div class="lb-cap" id="lbCap"></div>
+</div>
+
+<script>
+/* ---------- IMAGE HELPER ----------
+   Primary: local bundled JPEGs (assets/img/<id>.jpg) — works offline / anywhere.
+   Fallback chain (if a local file is missing): Google Drive CDN → Drive thumbnail. */
+function gUrl(id){return 'assets/img/'+id+'.jpg';}
+function attachImg(img,id,w){
+  img.src=gUrl(id);
+  img.dataset.gid=id;
+  img.onerror=function(){
+    if(!this.dataset.fb){this.dataset.fb='1';this.src='https://lh3.googleusercontent.com/d/'+id+'=w'+(w||1600);}
+    else if(this.dataset.fb==='1'){this.dataset.fb='2';this.src='https://drive.google.com/thumbnail?id='+id+'&sz=w'+(w||1600);}
+    else{this.onerror=null;this.style.background='var(--sage-soft)';}
+  };
+}
+
+/* ---------- DATA ---------- */
+const HERO_ID='1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j';
+const COMMON=['1o9ZNh6GHMd7H466ydQL73tAfmPXxpEwp','1kcwUpBwypHB2ewWMNL9KN1U7fZN6zZLl','1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw'];
+const MAP_ID='1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw';
+
+const TYPES=[
+ {
+  id:'a',code:'TYPE A',name:'ULTRA',cat:'บ้านเดี่ยว 2 ชั้น · Detached',
+  tag:'พื้นที่ส่วนตัวสมบูรณ์แบบ สำหรับครอบครัวใหญ่',
+  price:'4.5',
+  specs:{bed:3,bath:3,area:175,park:2,floor:2},
+  hero:'1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j',
+  card:'1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j',
+  feats:[
+   {i:'🛏️',t:'มาสเตอร์ชั้นบนเป็นสัดส่วน',d:'แยกโซนพักผ่อนออกจากพื้นที่กิจกรรม ให้ความเป็นส่วนตัวเต็มที่'},
+   {i:'📐',t:'เพดานสูง 3.2 เมตร',d:'โถง Living–Kitchen แบบเปิดโล่ง โปร่ง โล่ง สบายตา'},
+   {i:'🌿',t:'หน้าต่างบานใหญ่รับสวน',d:'รับแสงธรรมชาติเต็มบ้าน พร้อมสวนส่วนตัวหน้าบ้าน'},
+   {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'รองรับครอบครัวใหญ่ที่ต้องการพื้นที่และความสะดวก'}
+  ],
+  ext:['1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j','1t_nIRiphKQ_hMIPoJggDHGI0s0Rtp7jR','1vht1FFQtlmt_uRmaolXAtKPvbtpIJb_t','1AJZLWAOna8YRvsg0xxh9iLsH8b90hSIZ','1fUj5W--VsTTHBpElB-3_jyFn5kc5jjv7','1XlinDsUsxt440KNv6OqS1X9RIzKL_srz'],
+  int:[
+   {id:'1Xv1T75BYi9xe3HDKWPYY3DkLLQG390MB',c:'ห้องนั่งเล่น สไตล์เมดิเตอเรเนียน'},
+   {id:'1tgK-KukDcGNAcLVQPHHXObeLi56eB79p',c:'ห้องครัว'},
+   {id:'19YtgQR-mrMqOeifIg3XW7ohrP8Uei-yF',c:'ห้องนอนมาสเตอร์'},
+   {id:'12l3CZxu-N7dl-V-Uy90EnH65AbbM_dvP',c:'ห้องน้ำ'}
+  ],
+  plan:[]
+ },
+ {
+  id:'b',code:'TYPE B',name:'MINUTE',cat:'บ้านเดี่ยวชั้นเดียว · Single-Storey',
+  tag:'ใช้ชีวิตชั้นเดียวจบ ไม่ต้องขึ้นบันได',
+  price:'3.5',
+  specs:{bed:3,bath:2,area:128,park:2,floor:1},
+  hero:'1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ',
+  card:'1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ',
+  feats:[
+   {i:'🚶',t:'ไม่ต้องขึ้นบันได',d:'อยู่สบายทุกวัย เหมาะกับผู้สูงวัยและคนที่ชอบบ้านชั้นเดียว'},
+   {i:'🛋️',t:'Living–Dining–Kitchen เปิดโล่ง',d:'ลดทางเดิน ใช้พื้นที่ทุกตารางเมตรได้คุ้มค่า'},
+   {i:'🛏️',t:'มาสเตอร์ 16 ตร.ม.',d:'ห้องนอนใหญ่พร้อมห้องน้ำในตัว เป็นสัดส่วน'},
+   {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'บนที่ดินกว้าง พร้อมพื้นที่หน้าบ้านสำหรับครอบครัว'}
+  ],
+  ext:['1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ','1Dv6rSkvt7xseY4ShiVIha0-nLPO3364Z','1OupYgfLol3SEbnznjL_jrXPTtU35_0Z8','13Kd78IxqaD21fzr-7a330dUYZjAFFzjl','16sQHVfx80pELbp_Q6y19P-UjVENxm-gO'],
+  int:[
+   {id:'1jzBVX_OLalRdGphdFo0iNwYgDD_a_1QU',c:'ห้องนั่งเล่น (Living Room)'},
+   {id:'1Wv7orTdshCtUbtC1hQ3tf1BQ_q5SNbvu',c:'มุมนั่งเล่น'},
+   {id:'1UKK6BqwQiIYwvP1LGvuhzPKNpmlca4XK',c:'ห้องครัว'},
+   {id:'1pfidcyKFRi8S-jgJ3kYjXSohrw2sVnEV',c:'ห้องนอนมาสเตอร์'},
+   {id:'1zvL80UZ8rwI6QlnybSgzsMXuhv3ypNjZ',c:'ห้องน้ำ'},
+   {id:'1UJ15QvwUJWY9g8J0DAdMN5vGb3dMay-k',c:'ห้องทำงาน'}
+  ],
+  plan:[
+   {id:'12Jvyr2ohUUm8E86lXo6rchFgO4zVEs04',c:'ภาพ Isometric'},
+   {id:'1MrthbW1tmuPp-eQ-2dG_-53fEHMOha55',c:'ผังบ้าน'}
+  ]
+ },
+ {
+  id:'c',code:'TYPE C',name:'SECOND',cat:'บ้านแฝด · Semi-Detached',
+  tag:'บ้านเดี่ยวในงบที่จับต้องได้ เป็นส่วนตัว',
+  price:'2.5',
+  specs:{bed:3,bath:2,area:110,park:1,floor:2},
+  hero:'1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm',
+  card:'1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm',
+  feats:[
+   {i:'🔇',t:'ดีไซน์ผนังร่วมอัจฉริยะ',d:'วางตำแหน่งห้องนอนห่างจากผนังร่วม ลดเสียงรบกวน'},
+   {i:'☀️',t:'ห้องนั่งเล่นหันหน้าบ้าน',d:'รับแสงและลมธรรมชาติ โปร่งสบายตลอดวัน'},
+   {i:'🚪',t:'ทางเข้าแยกเป็นสัดส่วน',d:'ทางเข้าและสวนหน้าบ้านเป็นส่วนตัวของแต่ละหลัง'},
+   {i:'💰',t:'เริ่มต้น 2.5 ล้าน',d:'คุ้มค่า ได้พื้นที่ใช้สอยครบในราคาที่เป็นเจ้าของได้'}
+  ],
+  ext:['1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm'],
+  int:[
+   {id:'1cbkqMfEEu52CRKAX6oHwJkhF48e9VD7w',c:'ห้องนั่งเล่น (Living Room)'},
+   {id:'15OyE1gNH-_ZJPyiJ3Apg_lUYpmDWthRK',c:'มุมนั่งเล่น'},
+   {id:'1xQCzPuwYwfJF85IokL1kSY8OCk9ONvZG',c:'ห้องครัว'},
+   {id:'1RleMStgY33zYf8s3Ab5UWyABkhflIxBr',c:'ห้องนอนมาสเตอร์'},
+   {id:'1hDG_JYOT5VgLYQjTJDPgFt0iTNuNPpiK',c:'ห้องน้ำ'},
+   {id:'183xl7V4IIGoxG5CS1FGtfIATfJVlkK3O',c:'ห้องทำงาน'}
+  ],
+  plan:[
+   {id:'1agHsxoEyV5wfzSXsqA-SCjwXpgnCOMNp',c:'ภาพ Isometric'},
+   {id:'1C_OddPP2S-2BuBb8hnmgKHTClVXyDRQB',c:'ผังบ้าน'}
+  ]
+ },
+ {
+  id:'d',code:'TYPE D',name:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',
+  tag:'จุดเริ่มต้นของบ้านหลังแรก ในราคาที่ใช่',
+  price:'1.99',best:true,
+  note:'ผ่อนเริ่มต้น ~7,000 บาท/เดือน (3 ปีแรก ตามโปรโมชั่นธนาคาร)',
+  specs:{bed:3,bath:2,area:96,park:1,floor:2},
+  hero:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',
+  card:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',
+  feats:[
+   {i:'🛋️',t:'ชั้นล่าง Open-plan',d:'รวม Living · มุมทำงาน · ทานข้าว ไว้ในพื้นที่เดียวอย่างลงตัว'},
+   {i:'🛏️',t:'มาสเตอร์ชั้นบน',d:'ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน เป็นส่วนตัว'},
+   {i:'🧩',t:'ปรับใช้พื้นที่ได้ยืดหยุ่น',d:'จัดสเปซได้ตามไลฟ์สไตล์ โดยไม่ต้องก่อผนังเพิ่ม'},
+   {i:'💚',t:'เริ่มต้น 1.99 ล้าน',d:'เหมาะกับคู่รักเริ่มต้นและผู้ซื้อบ้านหลังแรก'}
+  ],
+  ext:['1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI','1mmQxjvMO3Qseti-psfeGddaQtqROO3XI','1vBBaj_nbCYCE5siKLlNSp40c--Vbmg8h','1__kT33m2mXEzXN7YN9chGafE_9r3asdV','1ujTuhlk_LUOdWvlNokqtRTqaGTo8qnbr'],
+  int:[
+   {id:'1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU',c:'ห้องนั่งเล่น'},
+   {id:'1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i',c:'ห้องครัว (ชั้น 1)'},
+   {id:'1jPIcHBHYtbwg2j-y4-oomig9h_ccPwQ1',c:'ห้องนอนมาสเตอร์ (ชั้น 2)'},
+   {id:'1v3bmaVtncOvs3MgkI3Ovt_2O4OXZDqaN',c:'ห้องน้ำ (ชั้น 1)'},
+   {id:'13pr91m4HewEYQauPlVRbOHr24xY_MrXJ',c:'ห้องทำงาน (ชั้น 2)'},
+   {id:'1vUK7_XOE06PSd9BW6991dCtPGDDONzpL',c:'ห้องแต่งตัว'}
+  ],
+  plan:[
+   {id:'1YCinFy2nRdyfqevyVOil845r3lPwGrHx',c:'ภาพ Isometric ชั้น 2'},
+   {id:'17JNB-s-06ykhxAmPT4SmQ4wAp7tnr3L1',c:'Isometric'}
+  ]
+ }
+];
+
+/* ---------- RENDER: hero + common ---------- */
+attachImg(document.getElementById('heroImg'),HERO_ID,1920);
+(function(){
+  const ap=document.getElementById('amenPhotos');
+  COMMON.forEach((id,i)=>{ap.appendChild(galItem(id,['ส่วนกลางโครงการ','ทางเข้าโครงการ','ภาพรวมโครงการ'][i]||'',''));});
+})();
+
+/* ---------- RENDER: type cards ---------- */
+function chipRow(s){
+  return '<div class="chips">'+
+   '<span class="chip">🛏️ '+s.bed+' นอน</span>'+
+   '<span class="chip">🛁 '+s.bath+' น้ำ</span>'+
+   '<span class="chip">📐 '+s.area+' ตร.ม.</span>'+
+   '<span class="chip">🚗 '+s.park+' คัน</span>'+
+   '</div>';
+}
+(function(){
+  const g=document.getElementById('typesGrid');
+  TYPES.forEach((t,i)=>{
+    const card=document.createElement('div');
+    card.className='tcard reveal zoom-in';
+    card.style.transitionDelay=(i*0.09)+'s';
+    card.onclick=()=>openType(t.id);
+    card.innerHTML=
+      '<div class="tcard-img">'+(t.best?'<div class="badge">★ ขายดีที่สุด</div>':'')+
+        '<div class="tcard-code"><div class="c">'+t.code+'</div><div class="n">'+t.name+'</div></div>'+
+        '<div class="imgslot"></div>'+
+      '</div>'+
+      '<div class="tcard-body">'+
+        '<div class="cat">'+t.cat+'</div>'+
+        '<div class="tag">'+t.tag+'</div>'+
+        chipRow(t.specs)+
+        '<div class="tcard-foot">'+
+          '<div class="price"><div class="p-lab">ราคาเริ่มต้น</div><div class="p-val">฿'+t.price+' <small>ล้าน</small></div></div>'+
+          '<span class="see">ดูรายละเอียด ›</span>'+
+        '</div>'+
+      '</div>';
+    const im=document.createElement('img');attachImg(im,t.card,1200);im.alt=t.code+' '+t.name;
+    card.querySelector('.imgslot').replaceWith(im);
+    g.appendChild(card);
+  });
+  observeReveals();
+})();
+
+/* ---------- gallery item ---------- */
+function galItem(id,cap,spanCls){
+  const d=document.createElement('div');
+  d.className='gitem'+(spanCls?(' '+spanCls):'');
+  const im=document.createElement('img');attachImg(im,id,1400);im.alt=cap||'';
+  d.appendChild(im);
+  d.insertAdjacentHTML('beforeend','<div class="zoom">⤢</div>'+(cap?'<div class="cap">'+cap+'</div>':''));
+  return d;
+}
+
+/* ---------- RENDER: detail ---------- */
+function openType(id){location.hash='type-'+id;}
+function buildDetail(t){
+  const body=document.getElementById('detailBody');
+  const extImgs=t.ext.map((id,i)=>({id,c:''}));
+  const s=t.specs;
+  let html='';
+  // hero
+  html+='<div class="dt-hero"><img class="bg" id="dtHeroImg" alt="'+t.name+'"/>'+
+    '<div class="wrap dt-hero-inner">'+
+      '<div class="c">'+t.code+'</div>'+
+      '<h2>'+t.name+'</h2>'+
+      '<div class="cat">'+t.cat+'</div>'+
+      '<div class="price">เริ่มต้น ฿'+t.price+' ล้านบาท'+(t.note?' <small>· '+t.note+'</small>':'')+'</div>'+
+    '</div></div>';
+  // spec band
+  html+='<div class="spec-band"><div class="wrap">'+
+    spec('🛏️',s.bed,'ห้องนอน')+spec('🛁',s.bath,'ห้องน้ำ')+spec('📐',s.area,'ตร.ม.')+spec('🚗',s.park,'จอดรถ (คัน)')+spec('🏠',s.floor,'ชั้น')+
+    '</div></div>';
+  // feats
+  html+='<div class="dt-feats"><div class="wrap"><div class="sec-head" style="margin-bottom:20px"><div class="eyebrow">จุดเด่นของแบบบ้าน</div><h2 class="serif" style="font-size:clamp(28px,4vw,42px)">ออกแบบมาเพื่อ '+t.tag+'</h2></div>'+
+    '<div class="feat-grid">'+t.feats.map(f=>'<div class="feat"><div class="fi">'+f.i+'</div><div><h4>'+f.t+'</h4><p>'+f.d+'</p></div></div>').join('')+'</div></div></div>';
+  // exterior
+  html+='<div class="gallery-sec" id="dt-ext"><div class="wrap"><div class="gsec-title"><h3 class="serif">ภาพภายนอก</h3><span>Exterior</span></div><div class="gal" data-gal="ext"></div></div></div>';
+  // interior
+  html+='<div class="gallery-sec alt" id="dt-int"><div class="wrap"><div class="gsec-title"><h3 class="serif">ภาพภายใน</h3><span>Interior</span></div><div class="gal" data-gal="int"></div></div></div>';
+  // plan
+  if(t.plan.length){
+    html+='<div class="gallery-sec" id="dt-plan"><div class="wrap"><div class="gsec-title"><h3 class="serif">ผังบ้าน &amp; Isometric</h3><span>Floor Plan</span></div><div class="gal" data-gal="plan"></div></div></div>';
+  }
+  // cta
+  html+='<div class="dt-cta"><a class="btn btn-dark" href="#contact" onclick="goHome();setTimeout(function(){document.getElementById(\'contact\').scrollIntoView({behavior:\'smooth\'})},80)">สนใจแบบ '+t.name+' · นัดชมบ้านจริง ›</a></div>';
+  body.innerHTML=html;
+  attachImg(document.getElementById('dtHeroImg'),t.hero,1920);
+
+  // fill galleries with span patterns
+  fillGal(body.querySelector('[data-gal="ext"]'),extImgs,spanPattern(extImgs.length));
+  fillGal(body.querySelector('[data-gal="int"]'),t.int,spanPattern(t.int.length));
+  if(t.plan.length) fillGal(body.querySelector('[data-gal="plan"]'),t.plan,t.plan.map(()=>'span-6'));
+  observeReveals();
+}
+function spec(ic,v,k){return '<div class="spec"><span class="ic">'+ic+'</span><div class="v">'+v+'</div><div class="k">'+k+'</div></div>';}
+function spanPattern(n){
+  // pleasant spans on a 12-col grid
+  const pats={
+    1:['span-12'],
+    2:['span-6','span-6'],
+    3:['span-4','span-4','span-4'],
+    4:['span-6','span-6','span-6','span-6'],
+    5:['span-8','span-4','span-4','span-4','span-4'],
+    6:['span-4','span-4','span-4','span-4','span-4','span-4']
+  };
+  if(pats[n]) return pats[n];
+  return Array.from({length:n},(_,i)=>(i%3===0?'span-6':'span-4'));
+}
+function fillGal(container,items,spans){
+  items.forEach((it,i)=>{
+    const cls=(spans&&spans[i])?spans[i]:'span-4';
+    const node=galItem(it.id,it.c||'',cls+' reveal zoom-in');
+    node.style.transitionDelay=((i%4)*0.08)+'s';
+    node.onclick=()=>openLb(items,i);
+    container.appendChild(node);
+  });
+}
+
+/* ---------- ROUTING ---------- */
+function route(){
+  const h=location.hash.replace('#','');
+  if(h.startsWith('type-')){
+    const t=TYPES.find(x=>x.id===h.split('type-')[1]);
+    if(t){showDetail(t);return;}
+  }
+  // home
+  showHome();
+  if(h && document.getElementById(h)){
+    setTimeout(()=>document.getElementById(h).scrollIntoView({behavior:'smooth'}),40);
+  }
+}
+let detailOpen=false;
+function showDetail(t){
+  buildDetail(t);
+  document.getElementById('home').style.display='none';
+  document.getElementById('detail').classList.add('active');
+  detailOpen=true;
+  window.scrollTo(0,0);
+}
+function showHome(){
+  document.getElementById('detail').classList.remove('active');
+  document.getElementById('home').style.display='';
+  detailOpen=false;
+}
+function goHome(){ if(location.hash.startsWith('#type-')){history.pushState('','',location.pathname);} showHome(); }
+function jumpDetail(id){const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});}
+window.addEventListener('hashchange',route);
+
+/* ---------- NAV ---------- */
+function navJump(e,id){
+  if(e)e.preventDefault();
+  closeMenu();
+  if(detailOpen){goHome();}
+  setTimeout(()=>{const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth'});},detailOpen?70:0);
+}
+function toggleMenu(){document.getElementById('navLinks').classList.toggle('open');}
+function closeMenu(){document.getElementById('navLinks').classList.remove('open');}
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>20);});
+
+/* ---------- LIGHTBOX ---------- */
+let lbItems=[],lbIdx=0;
+function openLb(items,idx){lbItems=items;lbIdx=idx;renderLb();document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
+function renderLb(){
+  const it=lbItems[lbIdx];
+  const img=document.getElementById('lbImg');
+  attachImg(img,it.id,2000);
+  document.getElementById('lbCap').textContent=it.c||'';
+  document.getElementById('lbCount').textContent=(lbIdx+1)+' / '+lbItems.length;
+}
+function lbStep(d){lbIdx=(lbIdx+d+lbItems.length)%lbItems.length;renderLb();}
+function closeLb(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLb();});
+document.addEventListener('keydown',e=>{
+  if(!document.getElementById('lb').classList.contains('open'))return;
+  if(e.key==='Escape')closeLb();
+  if(e.key==='ArrowRight')lbStep(1);
+  if(e.key==='ArrowLeft')lbStep(-1);
+});
+
+/* ---------- REVEAL ---------- */
+var io; /* var (not let): hoisted so observeReveals() can run from earlier IIFEs without a TDZ error */
+function observeReveals(){
+  if(!io){io=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{threshold:.12});}
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+}
+/* ---------- SCROLL FX: progress bar · hero parallax · floating brochure ---------- */
+const progressEl=document.getElementById('progress');
+const fabEl=document.getElementById('fab');
+let ticking=false;
+function onScrollFx(){
+  if(ticking)return; ticking=true;
+  requestAnimationFrame(()=>{
+    const sc=window.scrollY;
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    progressEl.style.width=(h>0?(sc/h*100):0)+'%';
+    const hb=document.querySelector('.hero-bg img');
+    if(hb&&!detailOpen&&sc<window.innerHeight){hb.style.transform='translateY('+(sc*0.2)+'px) scale(1.1)';}
+    if(sc>window.innerHeight*0.6){fabEl.classList.add('show');}else{fabEl.classList.remove('show');}
+    ticking=false;
+  });
+}
+window.addEventListener('scroll',onScrollFx,{passive:true});
+
+/* ---------- COUNT-UP stats ---------- */
+function countUp(el){
+  const to=parseFloat(el.dataset.to)||0,dur=1500,start=performance.now();
+  if(document.hidden){el.textContent=to;return;}            /* rAF is paused in hidden tabs — show final value */
+  (function step(now){
+    const p=Math.min((now-start)/dur,1),e=1-Math.pow(1-p,3);
+    el.textContent=Math.round(to*e);
+    if(p<1)requestAnimationFrame(step);
+  })(performance.now());
+  setTimeout(()=>{el.textContent=to;},dur+250);            /* safety: guarantee final value even if rAF stalls */
+}
+(function(){
+  const s=document.getElementById('stats');
+  if(!s)return;
+  const so=new IntersectionObserver(es=>{es.forEach(en=>{if(en.isIntersecting){en.target.querySelectorAll('.count').forEach(countUp);so.unobserve(en.target);}});},{threshold:.4});
+  so.observe(s);
+})();
+
+/* ---------- REGISTRATION FORM (FormSubmit — no backend needed) ---------- */
+const LEAD_ENDPOINT='https://formsubmit.co/ajax/twobuild.d@gmail.com';
+(function(){
+  const f=document.getElementById('regForm');
+  if(!f)return;
+  f.addEventListener('submit',async e=>{
+    e.preventDefault();
+    if(f._gotcha&&f._gotcha.value)return;
+    const name=(f['ชื่อ'].value||'').trim(),phone=(f['เบอร์โทร'].value||'').trim();
+    if(!name||!phone){alert('กรุณากรอกชื่อ–นามสกุล และเบอร์โทรศัพท์');return;}
+    const btn=document.getElementById('regSubmit');
+    btn.textContent='กำลังส่งข้อมูล…';btn.style.opacity='.7';btn.disabled=true;
+    const data={};
+    new FormData(f).forEach((v,k)=>{if(k!=='_gotcha'&&v)data[k]=v;});
+    data._subject='ลงทะเบียนใหม่ · วันเวลา One Vela — '+name;
+    data._template='table';data._captcha='false';
+    try{const a=JSON.parse(localStorage.getItem('wanwela_leads')||'[]');a.push(Object.assign({},data,{ts:new Date().toISOString()}));localStorage.setItem('wanwela_leads',JSON.stringify(a));}catch(_){ }
+    fetch(LEAD_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)}).catch(()=>{});  /* fire-and-forget — don't block the UI on the network */
+    f.style.display='none';
+    document.getElementById('regSuccess').classList.add('show');
+  });
+})();
+
+/* Safety fallback: browsers without IntersectionObserver get content shown immediately (never stuck hidden) */
+if(!('IntersectionObserver' in window)){
+  document.querySelectorAll('.reveal').forEach(e=>e.classList.add('in'));
+  document.querySelectorAll('#stats .count').forEach(el=>{el.textContent=el.dataset.to;});
+}
+
+observeReveals();
+onScrollFx();
+route();
+</script>
+</body>
+</html>
