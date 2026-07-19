@@ -133,9 +133,9 @@ section{position:relative}
   border:1px solid var(--line);
 }
 .tcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-.tcard-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:var(--sage-soft)}
-.tcard-img img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
-.tcard:hover .tcard-img img{transform:scale(1.06)}
+.tcard-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:#E9E2D5}
+.tcard-img img{width:100%;height:100%;object-fit:contain;object-position:center center;transition:transform .9s var(--ease)}
+.tcard:hover .tcard-img img{transform:none}
 .tcard-img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(20,28,18,.55) 100%)}
 .badge{position:absolute;top:16px;left:16px;z-index:3;background:var(--green);color:var(--cream-soft);font-size:12px;font-weight:600;letter-spacing:.08em;padding:7px 14px;border-radius:999px;text-transform:uppercase}
 .tcard-code{position:absolute;bottom:16px;left:20px;z-index:3;color:#fff}
@@ -165,7 +165,7 @@ section{position:relative}
 .dt-jump a{font-size:14px;color:var(--muted);transition:color .25s}
 .dt-jump a:hover{color:var(--green)}
 .dt-hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-.dt-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.dt-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;background:#1F2A1B}
 .dt-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.2) 0%,rgba(20,28,18,.15) 40%,rgba(20,28,18,.75) 100%)}
 .dt-hero-inner{position:relative;z-index:2;padding-bottom:54px}
 .dt-hero .c{font-family:var(--serif);letter-spacing:.34em;font-size:15px;opacity:.9}
@@ -616,8 +616,8 @@ const TYPES=[
   tag:'พื้นที่ส่วนตัวสมบูรณ์แบบ สำหรับครอบครัวใหญ่',
   price:'4.5',
   specs:{bed:3,bath:3,area:175,park:2,floor:2},
-  hero:'1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j',
-  card:'1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j',
+  hero:'type-a-full-house',
+  card:'type-a-full-house',
   feats:[
    {i:'🛏️',t:'มาสเตอร์ชั้นบนเป็นสัดส่วน',d:'แยกโซนพักผ่อนออกจากพื้นที่กิจกรรม ให้ความเป็นส่วนตัวเต็มที่'},
    {i:'📐',t:'เพดานสูง 3.2 เมตร',d:'โถง Living–Kitchen แบบเปิดโล่ง โปร่ง โล่ง สบายตา'},
@@ -638,8 +638,8 @@ const TYPES=[
   tag:'ใช้ชีวิตชั้นเดียวจบ ไม่ต้องขึ้นบันได',
   price:'3.5',
   specs:{bed:3,bath:2,area:128,park:2,floor:1},
-  hero:'1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ',
-  card:'1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ',
+  hero:'type-b-full-house',
+  card:'type-b-full-house',
   feats:[
    {i:'🚶',t:'ไม่ต้องขึ้นบันได',d:'อยู่สบายทุกวัย เหมาะกับผู้สูงวัยและคนที่ชอบบ้านชั้นเดียว'},
    {i:'🛋️',t:'Living–Dining–Kitchen เปิดโล่ง',d:'ลดทางเดิน ใช้พื้นที่ทุกตารางเมตรได้คุ้มค่า'},
@@ -665,8 +665,8 @@ const TYPES=[
   tag:'บ้านเดี่ยวในงบที่จับต้องได้ เป็นส่วนตัว',
   price:'2.5',
   specs:{bed:3,bath:2,area:110,park:1,floor:2},
-  hero:'1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm',
-  card:'1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm',
+  hero:'type-c-full-house',
+  card:'type-c-full-house',
   feats:[
    {i:'🔇',t:'ดีไซน์ผนังร่วมอัจฉริยะ',d:'วางตำแหน่งห้องนอนห่างจากผนังร่วม ลดเสียงรบกวน'},
    {i:'☀️',t:'ห้องนั่งเล่นหันหน้าบ้าน',d:'รับแสงและลมธรรมชาติ โปร่งสบายตลอดวัน'},
@@ -693,8 +693,8 @@ const TYPES=[
   price:'2.39',best:true,
   note:'สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย',
   specs:{bed:3,bath:2,area:96,park:1,floor:2},
-  hero:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',
-  card:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',
+  hero:'type-d-full-house',
+  card:'type-d-full-house',
   feats:[
    {i:'🛋️',t:'ชั้นล่าง Open-plan',d:'รวม Living · มุมทำงาน · ทานข้าว ไว้ในพื้นที่เดียวอย่างลงตัว'},
    {i:'🛏️',t:'มาสเตอร์ชั้นบน',d:'ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน เป็นส่วนตัว'},

@@ -45,8 +45,8 @@ img{display:block}
 /* overview grid */
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:8mm}
 .ov-card{background:var(--card);border:1px solid var(--line);border-radius:4mm;overflow:hidden}
-.ov-card .im{height:42mm;position:relative;background:var(--sage-soft)}
-.ov-card .im img{width:100%;height:100%;object-fit:cover}
+.ov-card .im{height:42mm;position:relative;background:#E9E2D5}
+.ov-card .im img{width:100%;height:100%;object-fit:contain;object-position:center center}
 .ov-card .badge{position:absolute;top:3mm;left:3mm;background:var(--green);color:var(--cream-soft);font-size:8px;font-weight:600;letter-spacing:.06em;padding:1.5mm 3mm;border-radius:6mm}
 .ov-card .code{position:absolute;bottom:2.5mm;left:3.5mm;color:#fff}
 .ov-card .code .c{font-family:var(--serif);font-size:8.5px;letter-spacing:.3em;opacity:.9}
@@ -60,7 +60,7 @@ img{display:block}
 
 /* type detail page */
 .t-hero{height:92mm;position:relative;border-radius:4mm;overflow:hidden;background:var(--sage-soft)}
-.t-hero img{width:100%;height:100%;object-fit:cover}
+.t-hero img{width:100%;height:100%;object-fit:contain;object-position:center center;background:#1F2A1B}
 .t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.06) 0%,transparent 42%,rgba(20,28,18,.86))}
 .t-hero .tag{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2}
 .t-hero .tag .c{font-family:var(--serif);letter-spacing:.32em;font-size:10px;opacity:.92}
@@ -116,10 +116,10 @@ img{display:block}
     <div class="phead"><div><div class="eyebrow">ภาพรวมโครงการ</div><h2 class="serif">เลือกแบบบ้านที่ใช่<br>สำหรับครอบครัวคุณ</h2></div><div class="pg">วันเวลา · 01</div></div>
     <p class="lead">โครงการวันเวลา (One Vela) อมตะ ชลบุรี — บ้านคุณภาพ 483 หลัง บนทำเลศักยภาพใกล้นิคมอุตสาหกรรมอมตะซิตี้ ชลบุรี พร้อมส่วนกลางครบครัน ออกแบบบ้าน 4 แบบเพื่อตอบทุกไลฟ์สไตล์</p>
     <div class="ov-grid">
-      <div class="ov-card"><div class="im"><img src="assets/img/1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>175 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>96 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-a-full-house.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>175 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-b-full-house.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-c-full-house.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-d-full-house.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>96 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
     </div>
   </div>
 </section>
@@ -161,19 +161,19 @@ img{display:block}
 
 <script>
 const T={
- a:{c:'TYPE A',n:'ULTRA',cat:'บ้านเดี่ยว 2 ชั้น · Detached',price:'4.5',pg:'02',hero:'1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j',
+ a:{c:'TYPE A',n:'ULTRA',cat:'บ้านเดี่ยว 2 ชั้น · Detached',price:'4.5',pg:'02',hero:'type-a-full-house',
     specs:[['3','ห้องนอน'],['3','ห้องน้ำ'],['175','ตร.ม.'],['2','จอดรถ'],['2','ชั้น']],
     feats:[['มาสเตอร์ชั้นบนเป็นสัดส่วน','แยกโซนพักผ่อนออกจากพื้นที่กิจกรรม เป็นส่วนตัวเต็มที่'],['เพดานสูง 3.2 เมตร','โถง Living–Kitchen เปิดโล่ง โปร่งสบาย'],['หน้าต่างบานใหญ่รับสวน','แสงธรรมชาติเต็มบ้าน พร้อมสวนส่วนตัว'],['ที่จอดรถ 2 คัน','รองรับครอบครัวใหญ่']],
     th:[['1Xv1T75BYi9xe3HDKWPYY3DkLLQG390MB','ห้องนั่งเล่น'],['1tgK-KukDcGNAcLVQPHHXObeLi56eB79p','ห้องครัว'],['19YtgQR-mrMqOeifIg3XW7ohrP8Uei-yF','ห้องนอนมาสเตอร์']]},
- b:{c:'TYPE B',n:'MINUTE',cat:'บ้านเดี่ยวชั้นเดียว · Single-Storey',price:'3.5',pg:'03',hero:'1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ',
+ b:{c:'TYPE B',n:'MINUTE',cat:'บ้านเดี่ยวชั้นเดียว · Single-Storey',price:'3.5',pg:'03',hero:'type-b-full-house',
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['128','ตร.ม.'],['2','จอดรถ'],['1','ชั้น']],
     feats:[['ไม่ต้องขึ้นบันได','อยู่สบายทุกวัย เหมาะกับผู้สูงวัย'],['Living–Dining–Kitchen เปิดโล่ง','ลดทางเดิน ใช้พื้นที่คุ้มค่า'],['มาสเตอร์ 16 ตร.ม.','พร้อมห้องน้ำในตัว เป็นสัดส่วน'],['ที่จอดรถ 2 คัน','บนที่ดินกว้าง']],
     th:[['1jzBVX_OLalRdGphdFo0iNwYgDD_a_1QU','ห้องนั่งเล่น'],['1UKK6BqwQiIYwvP1LGvuhzPKNpmlca4XK','ห้องครัว'],['1pfidcyKFRi8S-jgJ3kYjXSohrw2sVnEV','ห้องนอนมาสเตอร์']]},
- c:{c:'TYPE C',n:'SECOND',cat:'บ้านแฝด · Semi-Detached',price:'2.5',pg:'04',hero:'1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm',
+ c:{c:'TYPE C',n:'SECOND',cat:'บ้านแฝด · Semi-Detached',price:'2.5',pg:'04',hero:'type-c-full-house',
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['110','ตร.ม.'],['1','จอดรถ'],['2','ชั้น']],
     feats:[['ดีไซน์ผนังร่วมอัจฉริยะ','วางห้องนอนห่างผนังร่วม ลดเสียงรบกวน'],['ห้องนั่งเล่นหันหน้าบ้าน','รับแสงและลมธรรมชาติ'],['ทางเข้าแยกเป็นสัดส่วน','สวนหน้าบ้านเป็นส่วนตัว'],['เริ่มต้น 2.5 ล้าน','บ้านเดี่ยวในงบที่จับต้องได้']],
     th:[['1cbkqMfEEu52CRKAX6oHwJkhF48e9VD7w','ห้องนั่งเล่น'],['1xQCzPuwYwfJF85IokL1kSY8OCk9ONvZG','ห้องครัว'],['1RleMStgY33zYf8s3Ab5UWyABkhflIxBr','ห้องนอนมาสเตอร์']]},
- d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',best:1,
+ d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'type-d-full-house',best:1,
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['96','ตร.ม.'],['1','จอดรถ'],['2','ชั้น']],
     feats:[['ชั้นล่าง Open-plan','รวม Living · ทำงาน · ทานข้าว ในที่เดียว'],['มาสเตอร์ชั้นบน','ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน'],['ปรับใช้พื้นที่ยืดหยุ่น','ไม่ต้องก่อผนังเพิ่ม'],['เริ่ม 2.39 ล้าน','สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย']],
     th:[['1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU','ห้องนั่งเล่น'],['1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i','ห้องครัว'],['1jPIcHBHYtbwg2j-y4-oomig9h_ccPwQ1','ห้องนอนมาสเตอร์']]}
