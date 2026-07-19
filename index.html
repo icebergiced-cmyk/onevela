@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>วันเวลา · One Vela — อมตะ ชลบุรี | บ้านคือเวลาที่เราใช้กับคนที่รัก</title>
-<meta name="description" content="โครงการบ้านวันเวลา (One Vela) อมตะ ชลบุรี — บ้านเดี่ยว บ้านแฝด ทาวน์โฮม 4 แบบ เริ่มต้น 1.99 ล้านบาท เลือกแบบบ้านที่ใช่สำหรับครอบครัวคุณ" />
+<meta name="description" content="โครงการบ้านวันเวลา (One Vela) อมตะ ชลบุรี — บ้านเดี่ยว บ้านแฝด ทาวน์โฮม 4 แบบ เริ่มต้น 2.39 ล้านบาท เลือกแบบบ้านที่ใช่สำหรับครอบครัวคุณ" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
   --green:#2C3A28;
   --green-2:#3B4D35;
   --ink:#26301E;
-  --muted:#6E7563;
+  --muted:#4F5A49;
   --line:rgba(44,58,40,.12);
   --line-strong:rgba(44,58,40,.22);
   --shadow:0 18px 50px -24px rgba(44,58,40,.45);
@@ -29,12 +29,12 @@
   --sans:'Noto Sans Thai',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;overflow-x:hidden}
 body{
   font-family:var(--sans);
   color:var(--ink);
   background:var(--cream);
-  line-height:1.6;
+  line-height:1.68;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -76,16 +76,17 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:0;z-index:0}
+.hero-bg{position:absolute;inset:0;z-index:0;overflow:hidden}
 .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 14s var(--ease) forwards}
 @keyframes heroZoom{to{transform:scale(1)}}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(20,28,18,.55) 0%,rgba(20,28,18,.25) 35%,rgba(20,28,18,.6) 100%);}
-.hero-inner{position:relative;z-index:2;padding:90px 24px 0;max-width:920px}
+  linear-gradient(180deg,rgba(20,28,18,.62) 0%,rgba(20,28,18,.32) 36%,rgba(20,28,18,.72) 100%),
+  radial-gradient(circle at 50% 48%,rgba(20,28,18,.52) 0%,rgba(20,28,18,.28) 34%,transparent 58%);}
+.hero-inner{position:relative;z-index:2;padding:90px 24px 0;max-width:940px}
 .hero-logo{height:34px;width:auto;margin:0 auto 30px;filter:brightness(0) invert(1);opacity:.95}
-.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(52px,9vw,116px);line-height:.98;letter-spacing:.01em;text-shadow:0 4px 40px rgba(0,0,0,.35)}
-.hero .sub{font-size:clamp(17px,2.4vw,23px);font-weight:300;margin-top:24px;opacity:.96;text-shadow:0 2px 20px rgba(0,0,0,.4)}
-.hero .loc{margin-top:14px;font-size:13.5px;letter-spacing:.28em;text-transform:uppercase;opacity:.85}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(52px,9vw,116px);line-height:.98;letter-spacing:.01em;text-shadow:0 4px 34px rgba(0,0,0,.72),0 1px 2px rgba(0,0,0,.35)}
+.hero .sub{font-size:clamp(18px,2.35vw,24px);font-weight:400;margin-top:24px;opacity:.98;text-shadow:0 2px 18px rgba(0,0,0,.7);max-width:760px;margin-left:auto;margin-right:auto}
+.hero .loc{margin-top:14px;font-size:13.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.92;text-shadow:0 2px 14px rgba(0,0,0,.65)}
 .hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:42px}
 .btn{
   display:inline-flex;align-items:center;gap:9px;
@@ -110,7 +111,7 @@ section{position:relative}
 .sec{padding:108px 0}
 .sec-head{text-align:center;max-width:760px;margin:0 auto 64px}
 .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.1;color:var(--green)}
-.sec-head p{font-size:18px;color:var(--muted);margin-top:18px;font-weight:300}
+.sec-head p{font-size:18px;color:var(--muted);margin-top:18px;font-weight:400;line-height:1.75}
 
 /* concept */
 .concept{background:var(--cream-soft)}
@@ -142,9 +143,9 @@ section{position:relative}
 .tcard-code .n{font-family:'Cormorant Garamond',var(--serif);font-size:30px;font-weight:600;letter-spacing:.12em;line-height:1}
 .tcard-body{padding:26px 28px 30px}
 .tcard-body .cat{font-size:13px;color:var(--sage-deep);font-weight:600;letter-spacing:.04em}
-.tcard-body .tag{font-family:var(--serif);font-size:21px;color:var(--green);margin-top:6px;line-height:1.4;font-weight:500}
+.tcard-body .tag{font-family:var(--serif);font-size:22px;color:var(--green);margin-top:8px;line-height:1.45;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
-.chip{font-size:13px;color:var(--ink);background:var(--cream);border:1px solid var(--line);padding:6px 13px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.chip{font-size:13.5px;color:var(--ink);background:var(--cream);border:1px solid var(--line-strong);padding:7px 14px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
 .tcard-foot{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px}
 .price .p-lab{font-size:12.5px;color:var(--muted)}
 .price .p-val{font-family:var(--serif);font-size:27px;color:var(--green);font-weight:600;line-height:1.1}
@@ -186,7 +187,7 @@ section{position:relative}
 .feat:hover{transform:translateY(-4px);box-shadow:var(--shadow-soft)}
 .feat .fi{flex:0 0 46px;height:46px;border-radius:13px;background:var(--sage-soft);color:var(--green);display:flex;align-items:center;justify-content:center;font-size:22px}
 .feat h4{font-family:var(--serif);font-size:19px;color:var(--green);font-weight:600;margin-bottom:5px}
-.feat p{font-size:15px;color:var(--muted);line-height:1.6}
+.feat p{font-size:15.5px;color:var(--muted);line-height:1.72}
 
 .gallery-sec{padding:40px 0 96px}
 .gallery-sec.alt{background:var(--cream-soft)}
@@ -214,7 +215,7 @@ section{position:relative}
 .amen-cell:hover{background:var(--green-2)}
 .amen-cell .ic{font-size:30px;margin-bottom:16px}
 .amen-cell h4{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:8px}
-.amen-cell p{font-size:14.5px;color:rgba(251,247,238,.72);line-height:1.6}
+.amen-cell p{font-size:15px;color:rgba(251,247,238,.84);line-height:1.7}
 .amen-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
 .amen-photos .gitem{aspect-ratio:4/3}
 
@@ -369,7 +370,7 @@ section{position:relative}
   <!-- HERO -->
   <section class="hero">
     <div class="hero-bg">
-      <img id="heroImg" alt="โครงการวันเวลา อมตะ ชลบุรี" />
+      <img id="heroImg" alt="บ้านแฝดโครงการวันเวลา อมตะ ชลบุรี" />
     </div>
     <div class="hero-inner">
       <img class="hero-logo" src="assets/logo-horizontal-trim.png" alt="One Vela" />
@@ -396,7 +397,7 @@ section{position:relative}
       <div class="stats reveal" id="stats">
         <div class="stat"><div class="num"><span class="count" data-to="483">0</span></div><div class="lab">หลังทั้งโครงการ</div></div>
         <div class="stat"><div class="num"><span class="count" data-to="4">0</span></div><div class="lab">แบบบ้านให้เลือก</div></div>
-        <div class="stat"><div class="num serif">฿1.99–4.99</div><div class="lab">ล้านบาท</div></div>
+        <div class="stat"><div class="num serif">฿2.39–4.99</div><div class="lab">ล้านบาท</div></div>
         <div class="stat"><div class="num"><span class="count" data-to="3">0</span> นาที</div><div class="lab">ถึงส่วนกลาง</div></div>
       </div>
     </div>
@@ -605,7 +606,7 @@ function attachImg(img,id,w){
 }
 
 /* ---------- DATA ---------- */
-const HERO_ID='1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j';
+const HERO_ID='1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm';
 const COMMON=['1o9ZNh6GHMd7H466ydQL73tAfmPXxpEwp','1kcwUpBwypHB2ewWMNL9KN1U7fZN6zZLl','1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw'];
 const MAP_ID='1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw';
 
@@ -689,8 +690,8 @@ const TYPES=[
  {
   id:'d',code:'TYPE D',name:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',
   tag:'จุดเริ่มต้นของบ้านหลังแรก ในราคาที่ใช่',
-  price:'1.99',best:true,
-  note:'ผ่อนเริ่มต้น ~7,000 บาท/เดือน (3 ปีแรก ตามโปรโมชั่นธนาคาร)',
+  price:'2.39',best:true,
+  note:'สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย',
   specs:{bed:3,bath:2,area:96,park:1,floor:2},
   hero:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',
   card:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',
@@ -698,7 +699,7 @@ const TYPES=[
    {i:'🛋️',t:'ชั้นล่าง Open-plan',d:'รวม Living · มุมทำงาน · ทานข้าว ไว้ในพื้นที่เดียวอย่างลงตัว'},
    {i:'🛏️',t:'มาสเตอร์ชั้นบน',d:'ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน เป็นส่วนตัว'},
    {i:'🧩',t:'ปรับใช้พื้นที่ได้ยืดหยุ่น',d:'จัดสเปซได้ตามไลฟ์สไตล์ โดยไม่ต้องก่อผนังเพิ่ม'},
-   {i:'💚',t:'เริ่มต้น 1.99 ล้าน',d:'เหมาะกับคู่รักเริ่มต้นและผู้ซื้อบ้านหลังแรก'}
+   {i:'💚',t:'เริ่มต้น 2.39 ล้าน',d:'เหมาะกับคู่รักเริ่มต้นและผู้ซื้อบ้านหลังแรก'}
   ],
   ext:['1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI','1mmQxjvMO3Qseti-psfeGddaQtqROO3XI','1vBBaj_nbCYCE5siKLlNSp40c--Vbmg8h','1__kT33m2mXEzXN7YN9chGafE_9r3asdV','1ujTuhlk_LUOdWvlNokqtRTqaGTo8qnbr'],
   int:[

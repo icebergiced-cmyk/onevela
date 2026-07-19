@@ -10,13 +10,13 @@
 :root{
   --cream:#F4EEE2;--cream-soft:#FBF7EE;--card:#FCFAF3;
   --sage:#9DAE88;--sage-soft:#CAD5BC;--sage-deep:#7B8E64;
-  --green:#2C3A28;--green-2:#3B4D35;--ink:#26301E;--muted:#6E7563;--line:rgba(44,58,40,.16);
+  --green:#2C3A28;--green-2:#3B4D35;--ink:#26301E;--muted:#4F5A49;--line:rgba(44,58,40,.18);
   --serif:'Noto Serif Thai','Cormorant Garamond',serif;
   --sans:'Noto Sans Thai',sans-serif;
 }
 *{margin:0;padding:0;box-sizing:border-box;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 @page{size:A4;margin:0}
-body{font-family:var(--sans);color:var(--ink);line-height:1.55;font-size:11px}
+body{font-family:var(--sans);color:var(--ink);line-height:1.65;font-size:11.5px}
 .page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;background:var(--cream)}
 .page:last-child{page-break-after:auto}
 img{display:block}
@@ -25,13 +25,13 @@ img{display:block}
 
 /* COVER */
 .cover{background:#1b2417}
-.cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.92}
-.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.45),rgba(20,28,18,.25) 40%,rgba(20,28,18,.85))}
+.cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.95}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.56),rgba(20,28,18,.30) 40%,rgba(20,28,18,.88)),radial-gradient(circle at 50% 47%,rgba(20,28,18,.46),transparent 56%)}
 .cover-in{position:absolute;inset:0;z-index:2;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24mm}
 .cover img.logo{height:16mm;filter:brightness(0) invert(1);margin-bottom:12mm;opacity:.96}
 .cover h1{font-family:var(--serif);font-weight:600;font-size:62px;line-height:1}
-.cover .sub{font-weight:300;font-size:15px;margin-top:6mm;opacity:.95}
-.cover .loc{letter-spacing:.3em;text-transform:uppercase;font-size:11px;margin-top:4mm;opacity:.85}
+.cover .sub{font-weight:400;font-size:15.5px;margin-top:6mm;opacity:.98;text-shadow:0 2px 16px rgba(0,0,0,.65)}
+.cover .loc{letter-spacing:.26em;text-transform:uppercase;font-size:11px;margin-top:4mm;opacity:.92;text-shadow:0 2px 14px rgba(0,0,0,.6)}
 .cover .price{margin-top:10mm;font-family:var(--serif);font-size:20px;border-top:1px solid rgba(255,255,255,.4);border-bottom:1px solid rgba(255,255,255,.4);padding:4mm 8mm}
 .cover .foot{position:absolute;bottom:14mm;left:0;right:0;text-align:center;color:rgba(255,255,255,.9);font-size:11px;z-index:2}
 
@@ -40,7 +40,7 @@ img{display:block}
 .phead{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:1.5px solid var(--green);padding-bottom:5mm;margin-bottom:8mm}
 .phead h2{font-family:var(--serif);font-size:26px;color:var(--green);font-weight:600;line-height:1.1}
 .phead .pg{font-family:var(--serif);font-size:13px;color:var(--sage-deep)}
-.lead{font-size:12px;color:var(--muted);max-width:150mm}
+.lead{font-size:13px;color:var(--muted);max-width:150mm;line-height:1.75}
 
 /* overview grid */
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:8mm}
@@ -52,8 +52,8 @@ img{display:block}
 .ov-card .code .c{font-family:var(--serif);font-size:8.5px;letter-spacing:.3em;opacity:.9}
 .ov-card .code .n{font-family:'Cormorant Garamond',var(--serif);font-size:20px;font-weight:600;letter-spacing:.1em;line-height:.9}
 .ov-card .bd{padding:4mm 4.5mm 5mm}
-.ov-card .cat{font-size:9px;color:var(--sage-deep);font-weight:600}
-.ov-card .specs{display:flex;flex-wrap:wrap;gap:1.5mm 3mm;margin:2.5mm 0 3mm;font-size:9.5px;color:var(--ink)}
+.ov-card .cat{font-size:9.8px;color:var(--sage-deep);font-weight:700}
+.ov-card .specs{display:flex;flex-wrap:wrap;gap:1.5mm 3mm;margin:2.5mm 0 3mm;font-size:10px;color:var(--ink)}
 .ov-card .specs span{background:var(--cream);border:1px solid var(--line);padding:1mm 2.5mm;border-radius:5mm}
 .ov-card .pr{font-family:var(--serif);font-size:16px;color:var(--green);font-weight:600;border-top:1px solid var(--line);padding-top:2.5mm}
 .ov-card .pr small{font-size:10px}
@@ -61,7 +61,7 @@ img{display:block}
 /* type detail page */
 .t-hero{height:92mm;position:relative;border-radius:4mm;overflow:hidden;background:var(--sage-soft)}
 .t-hero img{width:100%;height:100%;object-fit:cover}
-.t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(20,28,18,.8))}
+.t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.06) 0%,transparent 42%,rgba(20,28,18,.86))}
 .t-hero .tag{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2}
 .t-hero .tag .c{font-family:var(--serif);letter-spacing:.32em;font-size:10px;opacity:.92}
 .t-hero .tag .n{font-family:'Cormorant Garamond',var(--serif);font-size:46px;font-weight:600;letter-spacing:.08em;line-height:.95}
@@ -76,7 +76,7 @@ img{display:block}
 .feat2{display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-top:2mm}
 .feat2 .f{background:var(--card);border:1px solid var(--line);border-radius:3mm;padding:4mm}
 .feat2 .f h4{font-family:var(--serif);font-size:12.5px;color:var(--green);font-weight:600;margin-bottom:1mm}
-.feat2 .f p{font-size:10px;color:var(--muted);line-height:1.5}
+.feat2 .f p{font-size:10.6px;color:var(--muted);line-height:1.62}
 .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-top:7mm}
 .thumbs .th{border-radius:3mm;overflow:hidden;height:38mm;background:var(--sage-soft);position:relative}
 .thumbs .th img{width:100%;height:100%;object-fit:cover}
@@ -86,7 +86,7 @@ img{display:block}
 .amen-list{display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm;margin-top:6mm}
 .amen-list .a{display:flex;gap:3mm;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:3mm}
 .amen-list .a b{font-family:var(--serif);color:var(--green);font-size:12px;display:block}
-.amen-list .a span{font-size:9.5px;color:var(--muted)}
+.amen-list .a span{font-size:10.2px;color:var(--muted);line-height:1.55}
 .contactbox{margin-top:10mm;background:var(--green);color:var(--cream-soft);border-radius:4mm;padding:9mm 10mm;text-align:center}
 .contactbox h3{font-family:var(--serif);font-size:22px;font-weight:600}
 .contactbox .row{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:7mm;text-align:center}
@@ -99,13 +99,13 @@ img{display:block}
 
 <!-- COVER -->
 <section class="page cover">
-  <img class="bg" src="assets/img/1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j.jpg" alt="">
+  <img class="bg" src="assets/img/1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm.jpg" alt="">
   <div class="cover-in">
     <img class="logo" src="assets/logo-horizontal-trim.png" alt="One Vela">
     <h1 class="serif">วันเวลา</h1>
     <div class="sub">บ้านไม่ใช่แค่สี่ผนัง — แต่คือเวลาที่เราใช้กับคนที่รัก</div>
     <div class="loc">One Vela · Amata — Chonburi</div>
-    <div class="price serif">บ้าน 4 แบบ · เริ่มต้น ฿1.99 – 4.99 ล้านบาท</div>
+    <div class="price serif">บ้าน 4 แบบ · เริ่มต้น ฿2.39 – 4.99 ล้านบาท</div>
   </div>
   <div class="foot">โบรชัวร์โครงการ · บริษัท ทู บิลด์ ดีเวลลอปเม้นท์ จำกัด · โทร 092-787-4222</div>
 </section>
@@ -119,7 +119,7 @@ img{display:block}
       <div class="ov-card"><div class="im"><img src="assets/img/1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>175 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
       <div class="ov-card"><div class="im"><img src="assets/img/1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
       <div class="ov-card"><div class="im"><img src="assets/img/1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>96 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿1.99 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>96 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
     </div>
   </div>
 </section>
@@ -173,9 +173,9 @@ const T={
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['110','ตร.ม.'],['1','จอดรถ'],['2','ชั้น']],
     feats:[['ดีไซน์ผนังร่วมอัจฉริยะ','วางห้องนอนห่างผนังร่วม ลดเสียงรบกวน'],['ห้องนั่งเล่นหันหน้าบ้าน','รับแสงและลมธรรมชาติ'],['ทางเข้าแยกเป็นสัดส่วน','สวนหน้าบ้านเป็นส่วนตัว'],['เริ่มต้น 2.5 ล้าน','บ้านเดี่ยวในงบที่จับต้องได้']],
     th:[['1cbkqMfEEu52CRKAX6oHwJkhF48e9VD7w','ห้องนั่งเล่น'],['1xQCzPuwYwfJF85IokL1kSY8OCk9ONvZG','ห้องครัว'],['1RleMStgY33zYf8s3Ab5UWyABkhflIxBr','ห้องนอนมาสเตอร์']]},
- d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'1.99',pg:'05',hero:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',best:1,
+ d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI',best:1,
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['96','ตร.ม.'],['1','จอดรถ'],['2','ชั้น']],
-    feats:[['ชั้นล่าง Open-plan','รวม Living · ทำงาน · ทานข้าว ในที่เดียว'],['มาสเตอร์ชั้นบน','ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน'],['ปรับใช้พื้นที่ยืดหยุ่น','ไม่ต้องก่อผนังเพิ่ม'],['เริ่ม 1.99 ล้าน','ผ่อน ~7,000/เดือน (3 ปีแรก)']],
+    feats:[['ชั้นล่าง Open-plan','รวม Living · ทำงาน · ทานข้าว ในที่เดียว'],['มาสเตอร์ชั้นบน','ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน'],['ปรับใช้พื้นที่ยืดหยุ่น','ไม่ต้องก่อผนังเพิ่ม'],['เริ่ม 2.39 ล้าน','สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย']],
     th:[['1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU','ห้องนั่งเล่น'],['1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i','ห้องครัว'],['1jPIcHBHYtbwg2j-y4-oomig9h_ccPwQ1','ห้องนอนมาสเตอร์']]}
 };
 const IMG=id=>'assets/img/'+id+'.jpg';
