@@ -8,9 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#F4EEE2;--cream-soft:#FBF7EE;--card:#FCFAF3;
-  --sage:#9DAE88;--sage-soft:#CAD5BC;--sage-deep:#7B8E64;
-  --green:#2C3A28;--green-2:#3B4D35;--ink:#26301E;--muted:#4F5A49;--line:rgba(44,58,40,.18);
+  --cream:#F5F5F7;--cream-soft:#FFFFFF;--card:#FFFFFF;
+  --sage:#A3B18A;--sage-soft:#E7ECE4;--sage-deep:#5E6F51;
+  --green:#1D1D1F;--green-2:#2D2D31;--ink:#1D1D1F;--muted:#6E6E73;--line:rgba(0,0,0,.12);
   --serif:'Noto Serif Thai','Cormorant Garamond',serif;
   --sans:'Noto Sans Thai',sans-serif;
 }
@@ -24,9 +24,9 @@ img{display:block}
 .eyebrow{font-size:9.5px;letter-spacing:.34em;text-transform:uppercase;color:var(--sage-deep);font-weight:600}
 
 /* COVER */
-.cover{background:#1b2417}
+.cover{background:#000}
 .cover img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.95}
-.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.56),rgba(20,28,18,.30) 40%,rgba(20,28,18,.88)),radial-gradient(circle at 50% 47%,rgba(20,28,18,.46),transparent 56%)}
+.cover::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.52),rgba(0,0,0,.28) 40%,rgba(0,0,0,.84)),radial-gradient(circle at 50% 47%,rgba(0,0,0,.38),transparent 56%)}
 .cover-in{position:absolute;inset:0;z-index:2;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:0 24mm}
 .cover img.logo{height:16mm;filter:brightness(0) invert(1);margin-bottom:12mm;opacity:.96}
 .cover h1{font-family:var(--serif);font-weight:600;font-size:62px;line-height:1}
@@ -45,7 +45,7 @@ img{display:block}
 /* overview grid */
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:8mm}
 .ov-card{background:var(--card);border:1px solid var(--line);border-radius:4mm;overflow:hidden}
-.ov-card .im{height:42mm;position:relative;background:#E9E2D5}
+.ov-card .im{height:42mm;position:relative;background:#F2F2F4}
 .ov-card .im img{width:100%;height:100%;object-fit:contain;object-position:center center}
 .ov-card .badge{position:absolute;top:3mm;left:3mm;background:var(--green);color:var(--cream-soft);font-size:8px;font-weight:600;letter-spacing:.06em;padding:1.5mm 3mm;border-radius:6mm}
 .ov-card .code{position:absolute;bottom:2.5mm;left:3.5mm;color:#fff}
@@ -60,8 +60,8 @@ img{display:block}
 
 /* type detail page */
 .t-hero{height:92mm;position:relative;border-radius:4mm;overflow:hidden;background:var(--sage-soft)}
-.t-hero img{width:100%;height:100%;object-fit:contain;object-position:center center;background:#1F2A1B}
-.t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.06) 0%,transparent 42%,rgba(20,28,18,.86))}
+.t-hero img{width:100%;height:100%;object-fit:contain;object-position:center center;background:#000}
+.t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,transparent 42%,rgba(0,0,0,.82))}
 .t-hero .tag{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2}
 .t-hero .tag .c{font-family:var(--serif);letter-spacing:.32em;font-size:10px;opacity:.92}
 .t-hero .tag .n{font-family:'Cormorant Garamond',var(--serif);font-size:46px;font-weight:600;letter-spacing:.08em;line-height:.95}
@@ -99,13 +99,13 @@ img{display:block}
 
 <!-- COVER -->
 <section class="page cover">
-  <img class="bg" src="assets/img/cover-onevela.jpg" alt="">
+  <img class="bg" src="assets/img/cover-onevela-20260721.jpg" alt="">
   <div class="cover-in">
     <img class="logo" src="assets/logo-horizontal-trim.png" alt="One Vela">
     <h1 class="serif">วันเวลา</h1>
     <div class="sub">บ้านไม่ใช่แค่สี่ผนัง — แต่คือเวลาที่เราใช้กับคนที่รัก</div>
     <div class="loc">One Vela · Amata — Chonburi</div>
-    <div class="price serif">บ้าน 4 แบบ · เริ่มต้น ฿2.39 – 4.99 ล้านบาท</div>
+    <div class="price serif">บ้าน 4 แบบ · ราคาเริ่มต้น ฿2.39 – 8 ล้านบาท</div>
   </div>
   <div class="foot">โบรชัวร์โครงการ · บริษัท ทู บิลด์ ดีเวลลอปเม้นท์ จำกัด · โทร 092-787-4222</div>
 </section>
@@ -116,10 +116,10 @@ img{display:block}
     <div class="phead"><div><div class="eyebrow">ภาพรวมโครงการ</div><h2 class="serif">เลือกแบบบ้านที่ใช่<br>สำหรับครอบครัวคุณ</h2></div><div class="pg">วันเวลา · 01</div></div>
     <p class="lead">โครงการวันเวลา (One Vela) อมตะ ชลบุรี — บ้านคุณภาพ 483 หลัง บนทำเลศักยภาพใกล้นิคมอุตสาหกรรมอมตะซิตี้ ชลบุรี พร้อมส่วนกลางครบครัน ออกแบบบ้าน 4 แบบเพื่อตอบทุกไลฟ์สไตล์</p>
     <div class="ov-grid">
-      <div class="ov-card"><div class="im"><img src="assets/img/type-a-full-house.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>165 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/type-b-full-house.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/type-c-full-house.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/type-d-full-house.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>96 ตร.ม.</span><span>จอด 1 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-a-main-20260721.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>165 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-b-main-20260721.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-c-main-20260721.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card"><div class="im"><img src="assets/img/type-d-main-20260721.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>120 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
     </div>
   </div>
 </section>
@@ -136,11 +136,12 @@ img{display:block}
     <div class="phead"><div><div class="eyebrow">ส่วนกลาง · ทำเล · ติดต่อ</div><h2 class="serif">ใช้ชีวิตทุกวัน<br>ในแบบที่ดีกว่า</h2></div><div class="pg">วันเวลา · 06</div></div>
     <div class="amen-list">
       <div class="a"><div><b>สวนส่วนกลาง 2 จุด</b><span>พื้นที่สีเขียวรวมกว่า 400 ตร.ม.</span></div></div>
-      <div class="a"><div><b>ฟิตเนส 24 ชม.</b><span>พร้อมเครื่องออกกำลังกาย 8 เครื่อง</span></div></div>
+      <div class="a"><div><b>ฟิตเนส</b><span>พร้อมเครื่องออกกำลังกาย 8 เครื่อง</span></div></div>
       <div class="a"><div><b>สนามเด็กเล่น 2 จุด</b><span>พื้นที่ปลอดภัยใกล้บ้าน</span></div></div>
       <div class="a"><div><b>รปภ. & CCTV 24 ชม.</b><span>ระบบรักษาความปลอดภัยตลอดวัน</span></div></div>
       <div class="a"><div><b>เดิน 3 นาทีถึงส่วนกลาง</b><span>ทุกหลังอยู่ในระยะเดินถึง</span></div></div>
-      <div class="a"><div><b>ถนนกว้าง 8 เมตร</b><span>เว้นระยะระหว่างบ้าน ≥ 3 เมตร</span></div></div>
+      <div class="a"><div><b>ถนนกว้าง 16 เมตร</b><span>เข้า-ออกสะดวก รองรับการใช้ชีวิตทุกวัน</span></div></div>
+      <div class="a"><div><b>0 นาที เชื่อมต่อสะพานชลมารควิถี</b><span>ส่วนต่อขยาย เชื่อมโครงข่ายถนนชายฝั่งและตัวเมืองชลบุรี</span></div></div>
     </div>
     <div style="margin-top:8mm;height:54mm;border-radius:4mm;overflow:hidden;position:relative;background:var(--sage-soft)">
       <img src="assets/img/1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw.jpg" style="width:100%;height:100%;object-fit:cover" alt="ผังโครงการ">
@@ -148,7 +149,7 @@ img{display:block}
     </div>
     <div class="contactbox">
       <div class="eyebrow" style="color:var(--sage-soft)">นัดชมโครงการ</div>
-      <h3 class="serif">มาสัมผัสบ้านจริง ที่วันเวลา อมตะ ชลบุรี</h3>
+      <h3 class="serif">ลงทะเบียนรับโซลาร์เซลล์ และชมบ้านจริง</h3>
       <div class="row">
         <div><b>โทรศัพท์</b><p>092-787-4222<br>09:00–18:00 ทุกวัน</p></div>
         <div><b>LINE / อีเมล</b><p>@605odwus<br>twobuild.d@gmail.com</p></div>
@@ -161,20 +162,20 @@ img{display:block}
 
 <script>
 const T={
- a:{c:'TYPE A',n:'ULTRA',cat:'บ้านเดี่ยว 2 ชั้น · Detached',price:'4.5',pg:'02',hero:'type-a-full-house',
+ a:{c:'TYPE A',n:'ULTRA',cat:'บ้านเดี่ยว 2 ชั้น · Detached',price:'4.5',pg:'02',hero:'type-a-main-20260721',
     specs:[['3','ห้องนอน'],['3','ห้องน้ำ'],['165','ตร.ม.'],['2','จอดรถ'],['2','ชั้น']],
     feats:[['มาสเตอร์ชั้นบนเป็นสัดส่วน','แยกโซนพักผ่อนออกจากพื้นที่กิจกรรม เป็นส่วนตัวเต็มที่'],['เพดานสูง 3.2 เมตร','โถง Living–Kitchen เปิดโล่ง โปร่งสบาย'],['หน้าต่างบานใหญ่รับสวน','แสงธรรมชาติเต็มบ้าน พร้อมสวนส่วนตัว'],['ที่จอดรถ 2 คัน','รองรับครอบครัวใหญ่']],
     th:[['1Xv1T75BYi9xe3HDKWPYY3DkLLQG390MB','ห้องนั่งเล่น'],['1tgK-KukDcGNAcLVQPHHXObeLi56eB79p','ห้องครัว'],['19YtgQR-mrMqOeifIg3XW7ohrP8Uei-yF','ห้องนอนมาสเตอร์']]},
- b:{c:'TYPE B',n:'MINUTE',cat:'บ้านเดี่ยวชั้นเดียว · Single-Storey',price:'3.5',pg:'03',hero:'type-b-full-house',
+ b:{c:'TYPE B',n:'MINUTE',cat:'บ้านเดี่ยวชั้นเดียว · Single-Storey',price:'3.5',pg:'03',hero:'type-b-main-20260721',
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['128','ตร.ม.'],['2','จอดรถ'],['1','ชั้น']],
     feats:[['ไม่ต้องขึ้นบันได','อยู่สบายทุกวัย เหมาะกับผู้สูงวัย'],['Living–Dining–Kitchen เปิดโล่ง','ลดทางเดิน ใช้พื้นที่คุ้มค่า'],['มาสเตอร์ 16 ตร.ม.','พร้อมห้องน้ำในตัว เป็นสัดส่วน'],['ที่จอดรถ 2 คัน','บนที่ดินกว้าง']],
     th:[['1jzBVX_OLalRdGphdFo0iNwYgDD_a_1QU','ห้องนั่งเล่น'],['1UKK6BqwQiIYwvP1LGvuhzPKNpmlca4XK','ห้องครัว'],['1pfidcyKFRi8S-jgJ3kYjXSohrw2sVnEV','ห้องนอนมาสเตอร์']]},
- c:{c:'TYPE C',n:'SECOND',cat:'บ้านแฝด · Semi-Detached',price:'2.5',pg:'04',hero:'type-c-full-house',
-    specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['110','ตร.ม.'],['1','จอดรถ'],['2','ชั้น']],
+ c:{c:'TYPE C',n:'SECOND',cat:'บ้านแฝด · Semi-Detached',price:'2.5',pg:'04',hero:'type-c-main-20260721',
+    specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['110','ตร.ม.'],['2','จอดรถ'],['2','ชั้น']],
     feats:[['ดีไซน์ผนังร่วมอัจฉริยะ','วางห้องนอนห่างผนังร่วม ลดเสียงรบกวน'],['ห้องนั่งเล่นหันหน้าบ้าน','รับแสงและลมธรรมชาติ'],['ทางเข้าแยกเป็นสัดส่วน','สวนหน้าบ้านเป็นส่วนตัว'],['เริ่มต้น 2.5 ล้าน','บ้านเดี่ยวในงบที่จับต้องได้']],
     th:[['1cbkqMfEEu52CRKAX6oHwJkhF48e9VD7w','ห้องนั่งเล่น'],['1xQCzPuwYwfJF85IokL1kSY8OCk9ONvZG','ห้องครัว'],['1RleMStgY33zYf8s3Ab5UWyABkhflIxBr','ห้องนอนมาสเตอร์']]},
- d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'type-d-full-house',best:1,
-    specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['96','ตร.ม.'],['1','จอดรถ'],['2','ชั้น']],
+ d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'type-d-main-20260721',best:1,
+    specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['120','ตร.ม.'],['2','จอดรถ'],['2','ชั้น']],
     feats:[['ชั้นล่าง Open-plan','รวม Living · ทำงาน · ทานข้าว ในที่เดียว'],['มาสเตอร์ชั้นบน','ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน'],['ปรับใช้พื้นที่ยืดหยุ่น','ไม่ต้องก่อผนังเพิ่ม'],['เริ่ม 2.39 ล้าน','สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย']],
     th:[['1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU','ห้องนั่งเล่น'],['1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i','ห้องครัว'],['1jPIcHBHYtbwg2j-y4-oomig9h_ccPwQ1','ห้องนอนมาสเตอร์']]}
 };

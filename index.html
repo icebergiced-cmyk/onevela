@@ -4,26 +4,28 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>วันเวลา · One Vela — อมตะ ชลบุรี | บ้านคือเวลาที่เราใช้กับคนที่รัก</title>
-<meta name="description" content="โครงการบ้านวันเวลา (One Vela) อมตะ ชลบุรี — บ้านเดี่ยว บ้านแฝด ทาวน์โฮม 4 แบบ เริ่มต้น 2.39 ล้านบาท เลือกแบบบ้านที่ใช่สำหรับครอบครัวคุณ" />
+<meta name="description" content="โครงการบ้านวันเวลา (One Vela) อมตะ ชลบุรี — บ้านเดี่ยว บ้านแฝด ทาวน์โฮม 4 แบบ ราคาเริ่มต้น 2.39–8 ล้านบาท เลือกแบบบ้านที่ใช่สำหรับครอบครัวคุณ" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Sans+Thai:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --cream:#F4EEE2;
-  --cream-soft:#FBF7EE;
-  --card:#FCFAF3;
-  --sage:#9DAE88;
-  --sage-soft:#CAD5BC;
-  --sage-deep:#7B8E64;
-  --green:#2C3A28;
-  --green-2:#3B4D35;
-  --ink:#26301E;
-  --muted:#4F5A49;
-  --line:rgba(44,58,40,.12);
-  --line-strong:rgba(44,58,40,.22);
-  --shadow:0 18px 50px -24px rgba(44,58,40,.45);
-  --shadow-soft:0 10px 30px -18px rgba(44,58,40,.35);
+  --cream:#F5F5F7;
+  --cream-soft:#FFFFFF;
+  --card:#FFFFFF;
+  --sage:#A3B18A;
+  --sage-soft:#E7ECE4;
+  --sage-deep:#5E6F51;
+  --green:#1D1D1F;
+  --green-2:#2D2D31;
+  --ink:#1D1D1F;
+  --muted:#6E6E73;
+  --line:rgba(0,0,0,.08);
+  --line-strong:rgba(0,0,0,.14);
+  --blue:#0071E3;
+  --blue-2:#147CE5;
+  --shadow:0 24px 70px -34px rgba(0,0,0,.24);
+  --shadow-soft:0 18px 48px -34px rgba(0,0,0,.20);
   --ease:cubic-bezier(.22,.7,.2,1);
   --serif:'Noto Serif Thai','Cormorant Garamond',serif;
   --sans:'Noto Sans Thai',-apple-system,BlinkMacSystemFont,'Helvetica Neue',sans-serif;
@@ -34,7 +36,7 @@ body{
   font-family:var(--sans);
   color:var(--ink);
   background:var(--cream);
-  line-height:1.68;
+  line-height:1.62;
   -webkit-font-smoothing:antialiased;
   overflow-x:hidden;
 }
@@ -50,14 +52,14 @@ a{color:inherit;text-decoration:none}
 /* ---------- NAV ---------- */
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:80;
-  background:rgba(244,238,226,.72);
+  background:rgba(245,245,247,.72);
   backdrop-filter:saturate(160%) blur(18px);
   -webkit-backdrop-filter:saturate(160%) blur(18px);
   border-bottom:1px solid transparent;
   transition:border-color .4s,background .4s;
 }
-.nav.scrolled{border-bottom-color:var(--line);background:rgba(244,238,226,.86)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px}
+.nav.scrolled{border-bottom-color:var(--line);background:rgba(255,255,255,.82)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:58px}
 .nav-logo{display:flex;align-items:center;gap:10px;cursor:pointer}
 .nav-logo img{height:30px;width:auto}
 .nav-links{display:flex;gap:34px;align-items:center}
@@ -80,14 +82,15 @@ a{color:inherit;text-decoration:none}
 .hero-bg img{width:100%;height:100%;object-fit:cover;transform:scale(1.08);animation:heroZoom 14s var(--ease) forwards}
 @keyframes heroZoom{to{transform:scale(1)}}
 .hero-bg::after{content:"";position:absolute;inset:0;background:
-  linear-gradient(180deg,rgba(20,28,18,.62) 0%,rgba(20,28,18,.32) 36%,rgba(20,28,18,.72) 100%),
-  radial-gradient(circle at 50% 48%,rgba(20,28,18,.52) 0%,rgba(20,28,18,.28) 34%,transparent 58%);}
+  linear-gradient(180deg,rgba(0,0,0,.56) 0%,rgba(0,0,0,.24) 36%,rgba(0,0,0,.70) 100%),
+  radial-gradient(circle at 50% 48%,rgba(0,0,0,.42) 0%,rgba(0,0,0,.22) 34%,transparent 58%);}
 .hero-inner{position:relative;z-index:2;padding:90px 24px 0;max-width:940px}
-.hero-logo{height:34px;width:auto;margin:0 auto 30px;filter:brightness(0) invert(1);opacity:.95;animation:heroIn .85s var(--ease) .12s both}
+.hero-logo{height:34px;width:auto;margin:0 auto 30px;filter:brightness(0) invert(1) drop-shadow(0 3px 18px rgba(0,0,0,.55));opacity:.98;animation:heroIn .85s var(--ease) .12s both}
 .hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(52px,9vw,116px);line-height:.98;letter-spacing:.01em;text-shadow:0 4px 34px rgba(0,0,0,.72),0 1px 2px rgba(0,0,0,.35);animation:heroIn 1s var(--ease) .24s both}
 .hero .sub{font-size:clamp(18px,2.35vw,24px);font-weight:400;margin-top:24px;opacity:.98;text-shadow:0 2px 18px rgba(0,0,0,.7);max-width:760px;margin-left:auto;margin-right:auto;animation:heroIn .95s var(--ease) .42s both}
 .hero .loc{margin-top:14px;font-size:13.5px;letter-spacing:.26em;text-transform:uppercase;opacity:.92;text-shadow:0 2px 14px rgba(0,0,0,.65);animation:heroIn .95s var(--ease) .56s both}
-.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:42px;animation:heroIn .95s var(--ease) .72s both}
+.hero-price{margin-top:16px;font-size:17px;font-weight:600;letter-spacing:.04em;text-shadow:0 2px 18px rgba(0,0,0,.68);animation:heroIn .95s var(--ease) .66s both}
+.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:36px;animation:heroIn .95s var(--ease) .82s both}
 @keyframes heroIn{from{opacity:0;transform:translateY(22px);filter:blur(8px)}to{opacity:1;transform:none;filter:none}}
 .btn{
   display:inline-flex;align-items:center;gap:9px;position:relative;overflow:hidden;
@@ -100,8 +103,8 @@ a{color:inherit;text-decoration:none}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(0,0,0,.5)}
 .btn-ghost{background:rgba(255,255,255,.12);color:#fff;border:1px solid rgba(255,255,255,.55);backdrop-filter:blur(6px)}
 .btn-ghost:hover{background:rgba(255,255,255,.22);transform:translateY(-2px)}
-.btn-dark{background:var(--green);color:var(--cream-soft)}
-.btn-dark:hover{background:var(--green-2);transform:translateY(-2px);box-shadow:var(--shadow-soft)}
+.btn-dark{background:var(--blue);color:#fff}
+.btn-dark:hover{background:var(--blue-2);transform:translateY(-2px);box-shadow:0 16px 34px -20px rgba(0,113,227,.72)}
 .btn-line{background:#06C755;color:#fff}
 .btn-line:hover{transform:translateY(-2px);box-shadow:0 12px 26px -12px rgba(6,199,85,.6)}
 .scroll-hint{position:absolute;bottom:26px;left:50%;transform:translateX(-50%);z-index:2;color:#fff;opacity:.7;font-size:12px;letter-spacing:.2em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:8px}
@@ -111,7 +114,7 @@ a{color:inherit;text-decoration:none}
 
 /* ---------- SECTIONS ---------- */
 section{position:relative}
-.sec{padding:108px 0}
+.sec{padding:96px 0}
 .sec-head{text-align:center;max-width:760px;margin:0 auto 64px}
 .sec-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(32px,5vw,52px);line-height:1.1;color:var(--green)}
 .sec-head p{font-size:18px;color:var(--muted);margin-top:18px;font-weight:400;line-height:1.75}
@@ -130,13 +133,13 @@ section{position:relative}
 /* ---------- TYPE GRID ---------- */
 .types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:30px}
 .tcard{
-  position:relative;background:var(--card);border-radius:24px;overflow:hidden;
+  position:relative;background:var(--card);border-radius:28px;overflow:hidden;
   box-shadow:var(--shadow-soft);cursor:pointer;
   transition:transform .5s var(--ease),box-shadow .5s var(--ease);
-  border:1px solid var(--line);
+  border:1px solid rgba(0,0,0,.06);
 }
-.tcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
-.tcard-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:#E9E2D5}
+.tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.tcard-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:#F2F2F4}
 .tcard-img img{width:100%;height:100%;object-fit:contain;object-position:center center;transition:transform .9s var(--ease)}
 .tcard:hover .tcard-img img{transform:none}
 .tcard-img::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(112deg,transparent 0 38%,rgba(255,255,255,.46) 48%,transparent 58%);opacity:0;transform:translateX(-120%);pointer-events:none}
@@ -151,7 +154,7 @@ section{position:relative}
 .tcard-body .cat{font-size:13px;color:var(--sage-deep);font-weight:600;letter-spacing:.04em}
 .tcard-body .tag{font-family:var(--serif);font-size:22px;color:var(--green);margin-top:8px;line-height:1.45;font-weight:600}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 22px}
-.chip{font-size:13.5px;color:var(--ink);background:var(--cream);border:1px solid var(--line-strong);padding:7px 14px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
+.chip{font-size:13.5px;color:var(--ink);background:#F5F5F7;border:1px solid var(--line);padding:7px 14px;border-radius:999px;display:inline-flex;align-items:center;gap:6px}
 .tcard-foot{display:flex;align-items:flex-end;justify-content:space-between;border-top:1px solid var(--line);padding-top:20px}
 .price .p-lab{font-size:12.5px;color:var(--muted)}
 .price .p-val{font-family:var(--serif);font-size:27px;color:var(--green);font-weight:600;line-height:1.1}
@@ -163,7 +166,7 @@ section{position:relative}
 #detail{display:none;padding-top:64px}
 #detail.active{display:block;animation:fadeUp .6s var(--ease)}
 @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
-.dt-back{position:sticky;top:64px;z-index:40;background:rgba(244,238,226,.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.dt-back{position:sticky;top:58px;z-index:40;background:rgba(255,255,255,.82);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
 .dt-back .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
 .back-btn{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--green);font-weight:500;cursor:pointer;transition:gap .3s}
 .back-btn:hover{gap:12px}
@@ -171,8 +174,8 @@ section{position:relative}
 .dt-jump a{font-size:14px;color:var(--muted);transition:color .25s}
 .dt-jump a:hover{color:var(--green)}
 .dt-hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
-.dt-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;background:#1F2A1B}
-.dt-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.2) 0%,rgba(20,28,18,.15) 40%,rgba(20,28,18,.75) 100%)}
+.dt-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;background:#000}
+.dt-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.10) 40%,rgba(0,0,0,.72) 100%)}
 .dt-hero-inner{position:relative;z-index:2;padding-bottom:54px}
 .dt-hero .c{font-family:var(--serif);letter-spacing:.34em;font-size:15px;opacity:.9}
 .dt-hero h2{font-family:'Cormorant Garamond',var(--serif);font-size:clamp(54px,10vw,120px);font-weight:600;letter-spacing:.06em;line-height:.95;margin:6px 0 4px}
@@ -204,6 +207,8 @@ section{position:relative}
 .gal{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;grid-auto-flow:dense}
 .gitem{position:relative;border-radius:16px;overflow:hidden;background:var(--sage-soft);cursor:zoom-in;box-shadow:var(--shadow-soft)}
 .gitem img{width:100%;height:100%;object-fit:cover;transition:transform .8s var(--ease)}
+.gitem.fit-contain{background:#000}
+.gitem.fit-contain img{object-fit:contain}
 .gitem:hover img{transform:scale(1.05)}
 .gitem .cap{position:absolute;left:0;right:0;bottom:0;padding:26px 18px 14px;color:#fff;font-size:14px;font-weight:500;background:linear-gradient(180deg,transparent,rgba(20,28,18,.72));opacity:0;transform:translateY(8px);transition:.4s var(--ease)}
 .gitem:hover .cap{opacity:1;transform:none}
@@ -214,12 +219,12 @@ section{position:relative}
 .dt-cta{text-align:center;padding:30px 0 96px}
 
 /* ---------- AMENITIES ---------- */
-.amen{background:var(--green);color:var(--cream-soft)}
+.amen{background:#000;color:#F5F5F7}
 .amen .sec-head h2{color:#fff}
 .amen .sec-head p{color:rgba(251,247,238,.75)}
 .amen-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.12);border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.12)}
-.amen-cell{background:var(--green);padding:38px 30px;transition:background .4s}
-.amen-cell:hover{background:var(--green-2)}
+.amen-cell{background:#101010;padding:38px 30px;transition:background .4s,transform .4s var(--ease)}
+.amen-cell:hover{background:#1D1D1F;transform:translateY(-2px)}
 .amen-cell .ic{font-size:30px;margin-bottom:16px;transition:transform .4s var(--ease)}
 .amen-cell:hover .ic{transform:translateY(-4px) scale(1.06)}
 .amen-cell h4{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:8px}
@@ -246,7 +251,7 @@ section{position:relative}
 .loc-map .map-cta span{font-size:13.5px;color:var(--muted)}
 
 /* ---------- CONTACT ---------- */
-.contact{background:var(--green);color:var(--cream-soft);text-align:center}
+.contact{background:#000;color:#F5F5F7;text-align:center}
 .contact .eyebrow{color:var(--sage-soft)}
 .contact h2{font-family:var(--serif);font-size:clamp(32px,5vw,54px);font-weight:600;line-height:1.12}
 .contact p.lead{font-size:18px;font-weight:300;color:rgba(251,247,238,.82);margin-top:18px;max-width:620px;margin-left:auto;margin-right:auto}
@@ -257,7 +262,7 @@ section{position:relative}
 .cinfo p{font-size:15.5px;color:rgba(251,247,238,.9);line-height:1.6}
 
 /* ---------- FOOTER ---------- */
-.foot{background:#1F2A1B;color:rgba(251,247,238,.6);padding:54px 0 40px;text-align:center}
+.foot{background:#000;color:rgba(245,245,247,.62);padding:54px 0 40px;text-align:center}
 .foot img{height:30px;margin:0 auto 22px;filter:brightness(0) invert(1);opacity:.9}
 .foot .co{color:rgba(251,247,238,.85);font-size:15px;font-weight:500}
 .foot .meta{font-size:13px;margin-top:10px;line-height:1.8}
@@ -277,26 +282,26 @@ section{position:relative}
 .lb-count{position:absolute;top:30px;left:30px;color:rgba(255,255,255,.7);font-size:14px;letter-spacing:.1em}
 
 /* scroll progress */
-.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--sage-soft),var(--sage),var(--sage-deep));width:0;z-index:95;transition:width .12s linear}
+.progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#0071E3,#5AC8FA);width:0;z-index:95;transition:width .12s linear}
 /* map */
 .map-frame{width:100%;height:360px;border:0;display:block;filter:saturate(.92) contrast(1.02)}
 /* register */
 .register{background:var(--cream-soft)}
 .reg-wrap{display:grid;grid-template-columns:.92fr 1.08fr;gap:42px;align-items:stretch}
-.reg-aside{background:var(--green);color:var(--cream-soft);border-radius:24px;padding:50px 42px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.reg-aside{background:#1D1D1F;color:#F5F5F7;border-radius:28px;padding:50px 42px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .reg-aside .eyebrow{color:var(--sage-soft)}
 .reg-aside h2{font-family:var(--serif);font-size:clamp(28px,3.6vw,42px);font-weight:600;line-height:1.14;margin-bottom:16px}
 .reg-aside p{color:rgba(251,247,238,.82);font-weight:300;font-size:16px}
 .reg-perks{list-style:none;margin-top:28px;display:flex;flex-direction:column;gap:15px}
 .reg-perks li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(251,247,238,.92)}
 .reg-perks .ic{flex:0 0 22px;color:var(--sage-soft);font-size:17px}
-.reg-card{background:var(--card);border:1px solid var(--line);border-radius:24px;padding:42px;box-shadow:var(--shadow-soft)}
+.reg-card{background:var(--card);border:1px solid rgba(0,0,0,.06);border-radius:28px;padding:42px;box-shadow:var(--shadow-soft)}
 .reg-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .field{margin-bottom:16px}
 .field label{display:block;font-size:13.5px;color:var(--ink);margin-bottom:7px;font-weight:500}
 .field label .req{color:#b4543a}
-.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line-strong);border-radius:12px;font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff;transition:border-color .25s,box-shadow .25s}
-.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--sage-deep);box-shadow:0 0 0 3px rgba(123,142,100,.2)}
+.field input,.field select,.field textarea{width:100%;padding:13px 15px;border:1px solid var(--line-strong);border-radius:14px;font-family:var(--sans);font-size:15px;color:var(--ink);background:#fff;transition:border-color .25s,box-shadow .25s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(0,113,227,.16)}
 .field textarea{resize:vertical;min-height:80px}
 .hp{position:absolute;left:-9999px;opacity:0;height:0;width:0;overflow:hidden}
 .reg-submit{width:100%;justify-content:center;margin-top:6px;font-size:16px;padding:16px}
@@ -326,7 +331,7 @@ section{position:relative}
   .nav-links{display:none}
   .nav-cta{display:none}
   .nav-burger{display:flex}
-  .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:rgba(244,238,226,.97);backdrop-filter:blur(18px);padding:8px 0;border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex;position:absolute;top:58px;left:0;right:0;flex-direction:column;gap:0;background:rgba(255,255,255,.94);backdrop-filter:blur(18px);padding:8px 0;border-bottom:1px solid var(--line)}
   .nav-links.open a{padding:15px 24px;width:100%}
   .nav-links.open a::after{display:none}
   .types-grid{grid-template-columns:1fr}
@@ -390,6 +395,7 @@ section{position:relative}
       <h1 class="serif">วันเวลา</h1>
       <p class="sub">บ้านไม่ใช่แค่สี่ผนัง — แต่คือเวลาที่เราใช้กับคนที่รัก</p>
       <p class="loc">One Vela · Amata — Chonburi</p>
+      <p class="hero-price">ราคาเริ่มต้น ฿2.39–8 ล้านบาท</p>
       <div class="hero-cta">
         <button class="btn btn-primary" onclick="navJump(event,'types')">ดูแบบบ้านทั้งหมด</button>
         <a class="btn btn-ghost" href="#register" onclick="navJump(event,'register')">นัดเยี่ยมชมโครงการ</a>
@@ -410,8 +416,8 @@ section{position:relative}
       <div class="stats reveal" id="stats">
         <div class="stat"><div class="num"><span class="count" data-to="483">0</span></div><div class="lab">หลังทั้งโครงการ</div></div>
         <div class="stat"><div class="num"><span class="count" data-to="4">0</span></div><div class="lab">แบบบ้านให้เลือก</div></div>
-        <div class="stat"><div class="num serif">฿2.39–4.99</div><div class="lab">ล้านบาท</div></div>
-        <div class="stat"><div class="num"><span class="count" data-to="3">0</span> นาที</div><div class="lab">ถึงส่วนกลาง</div></div>
+        <div class="stat"><div class="num serif">฿2.39–8</div><div class="lab">ล้านบาท</div></div>
+        <div class="stat"><div class="num"><span class="count" data-to="0">0</span> นาที</div><div class="lab">เชื่อมต่อสะพานชลมารควิถี ส่วนต่อขยาย</div></div>
       </div>
     </div>
   </section>
@@ -438,11 +444,11 @@ section{position:relative}
       </div>
       <div class="amen-grid reveal">
         <div class="amen-cell"><div class="ic">🌳</div><h4>สวนส่วนกลาง 2 จุด</h4><p>พื้นที่สีเขียวรวมกว่า 400 ตร.ม. สำหรับพักผ่อนและกิจกรรมครอบครัว</p></div>
-        <div class="amen-cell"><div class="ic">🏋️</div><h4>ฟิตเนส 24 ชม.</h4><p>ห้องออกกำลังกายพร้อมเครื่อง 8 เครื่อง เปิดให้ใช้ตลอดวัน</p></div>
+        <div class="amen-cell"><div class="ic">🏋️</div><h4>ฟิตเนส</h4><p>ห้องออกกำลังกายพร้อมเครื่อง 8 เครื่อง สำหรับทุกจังหวะชีวิต</p></div>
         <div class="amen-cell"><div class="ic">🛝</div><h4>สนามเด็กเล่น 2 จุด</h4><p>พื้นที่ปลอดภัยให้เด็ก ๆ ได้วิ่งเล่นใกล้บ้าน</p></div>
         <div class="amen-cell"><div class="ic">🛡️</div><h4>รปภ. &amp; CCTV 24 ชม.</h4><p>ระบบรักษาความปลอดภัยและกล้องวงจรปิดตลอด 24 ชั่วโมง</p></div>
         <div class="amen-cell"><div class="ic">🚶</div><h4>เดิน 3 นาทีถึงส่วนกลาง</h4><p>ทุกหลังอยู่ในระยะเดินถึงพื้นที่ส่วนกลางได้สบาย</p></div>
-        <div class="amen-cell"><div class="ic">🛣️</div><h4>ถนนกว้าง 8 เมตร</h4><p>ถนนภายในกว้างขวาง เว้นระยะระหว่างบ้านอย่างน้อย 3 เมตร</p></div>
+        <div class="amen-cell"><div class="ic">🛣️</div><h4>ถนนกว้าง 16 เมตร</h4><p>ถนนภายในกว้างขวาง รองรับการเข้า-ออกได้สะดวกยิ่งขึ้น</p></div>
       </div>
       <div class="amen-photos reveal" id="amenPhotos"></div>
     </div>
@@ -458,6 +464,7 @@ section{position:relative}
       <div class="loc-grid">
         <ul class="loc-list reveal">
           <li><div class="ic">🏭</div><div><b>ใกล้นิคมอุตสาหกรรมอมตะซิตี้ ชลบุรี</b><span>เดินทางสะดวกสำหรับคนทำงานในเขตอุตสาหกรรมและครอบครัว</span></div></li>
+          <li><div class="ic">🌉</div><div><b>0 นาที เชื่อมต่อสะพานชลมารควิถี ส่วนต่อขยาย</b><span>เดินทางสู่โครงข่ายถนนชายฝั่งและตัวเมืองชลบุรีได้ต่อเนื่องจากหน้าโครงการ</span></div></li>
           <li><div class="ic">🛣️</div><div><b>เชื่อมมอเตอร์เวย์ &amp; ทางเลี่ยงเมือง</b><span>เข้า-ออกกรุงเทพฯ พัทยา และตัวเมืองชลบุรีได้รวดเร็ว</span></div></li>
           <li><div class="ic">🛒</div><div><b>ใกล้ห้างสรรพสินค้า ตลาด และร้านสะดวกซื้อ</b><span>สิ่งอำนวยความสะดวกครบครันในระยะใกล้</span></div></li>
           <li><div class="ic">🏥</div><div><b>ใกล้โรงพยาบาลและสถานศึกษา</b><span>อุ่นใจเรื่องสุขภาพและการเรียนของลูกหลาน</span></div></li>
@@ -481,13 +488,13 @@ section{position:relative}
       <div class="reg-wrap">
         <aside class="reg-aside reveal from-left">
           <div class="eyebrow">ลงทะเบียนรับสิทธิ์</div>
-          <h2 class="serif">ลงทะเบียนเพื่อรับสิทธิพิเศษ และนัดเข้าชมโครงการ</h2>
-          <p>กรอกข้อมูลสั้น ๆ ทีมงานจะติดต่อกลับเพื่อนัดหมายเข้าชมบ้านจริง พร้อมโปรโมชั่นและคำปรึกษาเรื่องสินเชื่อ</p>
+          <h2 class="serif">ลงทะเบียนเพื่อรับโซลาร์เซลล์ และนัดเข้าชมโครงการ</h2>
+          <p>กรอกข้อมูลสั้น ๆ ทีมงานจะติดต่อกลับเพื่อนัดหมายเข้าชมบ้านจริง พร้อมสิทธิ์โซลาร์เซลล์ โปรโมชั่น และคำปรึกษาเรื่องสินเชื่อ</p>
           <ul class="reg-perks">
+            <li><span class="ic">✓</span><span>รับสิทธิ์โซลาร์เซลล์สำหรับผู้ลงทะเบียน</span></li>
             <li><span class="ic">✓</span><span>รับโปรโมชั่นพิเศษเฉพาะผู้ลงทะเบียน</span></li>
             <li><span class="ic">✓</span><span>นัดชมบ้านตัวอย่างทุกแบบ ตามเวลาที่สะดวก</span></li>
             <li><span class="ic">✓</span><span>คำปรึกษาสินเชื่อ–ผ่อนดาวน์ ครบวงจร</span></li>
-            <li><span class="ic">✓</span><span>รับโบรชัวร์และผังโครงการฉบับเต็ม</span></li>
           </ul>
         </aside>
         <div class="reg-card reveal from-right">
@@ -532,7 +539,7 @@ section{position:relative}
               <div class="field"><label>อีเมล (ถ้ามี)</label><input name="อีเมล" type="email" placeholder="you@email.com" /></div>
             </div>
             <div class="field"><label>ข้อความเพิ่มเติม</label><textarea name="ข้อความ" placeholder="เช่น อยากนัดวันเสาร์-อาทิตย์ / สอบถามโปรโมชั่น"></textarea></div>
-            <button type="submit" class="btn btn-dark reg-submit" id="regSubmit">ลงทะเบียน · ให้ทีมงานติดต่อกลับ</button>
+            <button type="submit" class="btn btn-dark reg-submit" id="regSubmit">ลงทะเบียนรับโซลาร์เซลล์ · ให้ทีมงานติดต่อกลับ</button>
             <p class="reg-note">ข้อมูลของคุณจะถูกส่งให้ทีมขายวันเวลาเท่านั้น เพื่อใช้ติดต่อกลับ</p>
           </form>
           <div class="reg-success" id="regSuccess">
@@ -619,7 +626,7 @@ function attachImg(img,id,w){
 }
 
 /* ---------- DATA ---------- */
-const HERO_ID='cover-onevela';
+const HERO_ID='cover-onevela-20260721';
 const COMMON=['1o9ZNh6GHMd7H466ydQL73tAfmPXxpEwp','1kcwUpBwypHB2ewWMNL9KN1U7fZN6zZLl','1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw'];
 const MAP_ID='1QZ68AOzjWNQPkoQ3MtFfqOjJHXxIloEw';
 
@@ -629,15 +636,15 @@ const TYPES=[
   tag:'พื้นที่ส่วนตัวสมบูรณ์แบบ สำหรับครอบครัวใหญ่',
   price:'4.5',
   specs:{bed:3,bath:3,area:165,park:2,floor:2},
-  hero:'type-a-full-house',
-  card:'type-a-full-house',
+  hero:'type-a-main-20260721',
+  card:'type-a-main-20260721',
   feats:[
    {i:'🛏️',t:'มาสเตอร์ชั้นบนเป็นสัดส่วน',d:'แยกโซนพักผ่อนออกจากพื้นที่กิจกรรม ให้ความเป็นส่วนตัวเต็มที่'},
    {i:'📐',t:'เพดานสูง 3.2 เมตร',d:'โถง Living–Kitchen แบบเปิดโล่ง โปร่ง โล่ง สบายตา'},
    {i:'🌿',t:'หน้าต่างบานใหญ่รับสวน',d:'รับแสงธรรมชาติเต็มบ้าน พร้อมสวนส่วนตัวหน้าบ้าน'},
    {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'รองรับครอบครัวใหญ่ที่ต้องการพื้นที่และความสะดวก'}
   ],
-  ext:['1oET5O22cSVkTJuPpcHguqN28aMnWpQ1j','1t_nIRiphKQ_hMIPoJggDHGI0s0Rtp7jR','1vht1FFQtlmt_uRmaolXAtKPvbtpIJb_t','1AJZLWAOna8YRvsg0xxh9iLsH8b90hSIZ','1fUj5W--VsTTHBpElB-3_jyFn5kc5jjv7','1XlinDsUsxt440KNv6OqS1X9RIzKL_srz'],
+  ext:['type-a-main-20260721','1t_nIRiphKQ_hMIPoJggDHGI0s0Rtp7jR','1vht1FFQtlmt_uRmaolXAtKPvbtpIJb_t','1AJZLWAOna8YRvsg0xxh9iLsH8b90hSIZ','1fUj5W--VsTTHBpElB-3_jyFn5kc5jjv7','1XlinDsUsxt440KNv6OqS1X9RIzKL_srz'],
   int:[
    {id:'1Xv1T75BYi9xe3HDKWPYY3DkLLQG390MB',c:'ห้องนั่งเล่น สไตล์เมดิเตอเรเนียน'},
    {id:'1tgK-KukDcGNAcLVQPHHXObeLi56eB79p',c:'ห้องครัว'},
@@ -651,15 +658,15 @@ const TYPES=[
   tag:'ใช้ชีวิตชั้นเดียวจบ ไม่ต้องขึ้นบันได',
   price:'3.5',
   specs:{bed:3,bath:2,area:128,park:2,floor:1},
-  hero:'type-b-full-house',
-  card:'type-b-full-house',
+  hero:'type-b-main-20260721',
+  card:'type-b-main-20260721',
   feats:[
    {i:'🚶',t:'ไม่ต้องขึ้นบันได',d:'อยู่สบายทุกวัย เหมาะกับผู้สูงวัยและคนที่ชอบบ้านชั้นเดียว'},
    {i:'🛋️',t:'Living–Dining–Kitchen เปิดโล่ง',d:'ลดทางเดิน ใช้พื้นที่ทุกตารางเมตรได้คุ้มค่า'},
    {i:'🛏️',t:'มาสเตอร์ 16 ตร.ม.',d:'ห้องนอนใหญ่พร้อมห้องน้ำในตัว เป็นสัดส่วน'},
    {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'บนที่ดินกว้าง พร้อมพื้นที่หน้าบ้านสำหรับครอบครัว'}
   ],
-  ext:['1I3Drihx1w9X-R4bytsU4oOPdRIQWHxJQ','1Dv6rSkvt7xseY4ShiVIha0-nLPO3364Z','1OupYgfLol3SEbnznjL_jrXPTtU35_0Z8','13Kd78IxqaD21fzr-7a330dUYZjAFFzjl','16sQHVfx80pELbp_Q6y19P-UjVENxm-gO'],
+  ext:['type-b-main-20260721','1Dv6rSkvt7xseY4ShiVIha0-nLPO3364Z','1OupYgfLol3SEbnznjL_jrXPTtU35_0Z8','13Kd78IxqaD21fzr-7a330dUYZjAFFzjl','16sQHVfx80pELbp_Q6y19P-UjVENxm-gO'],
   int:[
    {id:'1jzBVX_OLalRdGphdFo0iNwYgDD_a_1QU',c:'ห้องนั่งเล่น (Living Room)'},
    {id:'1Wv7orTdshCtUbtC1hQ3tf1BQ_q5SNbvu',c:'มุมนั่งเล่น'},
@@ -677,16 +684,16 @@ const TYPES=[
   id:'c',code:'TYPE C',name:'SECOND',cat:'บ้านแฝด · Semi-Detached',
   tag:'บ้านเดี่ยวในงบที่จับต้องได้ เป็นส่วนตัว',
   price:'2.5',
-  specs:{bed:3,bath:2,area:110,park:1,floor:2},
-  hero:'type-c-full-house',
-  card:'type-c-full-house',
+  specs:{bed:3,bath:2,area:110,park:2,floor:2},
+  hero:'type-c-main-20260721',
+  card:'type-c-main-20260721',
   feats:[
    {i:'🔇',t:'ดีไซน์ผนังร่วมอัจฉริยะ',d:'วางตำแหน่งห้องนอนห่างจากผนังร่วม ลดเสียงรบกวน'},
    {i:'☀️',t:'ห้องนั่งเล่นหันหน้าบ้าน',d:'รับแสงและลมธรรมชาติ โปร่งสบายตลอดวัน'},
    {i:'🚪',t:'ทางเข้าแยกเป็นสัดส่วน',d:'ทางเข้าและสวนหน้าบ้านเป็นส่วนตัวของแต่ละหลัง'},
-   {i:'💰',t:'เริ่มต้น 2.5 ล้าน',d:'คุ้มค่า ได้พื้นที่ใช้สอยครบในราคาที่เป็นเจ้าของได้'}
+   {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'รองรับการใช้งานประจำวันของครอบครัวได้ครบกว่า'}
   ],
-  ext:['1yhB9gcxpbP2mMThQX5to0cifl_AD4uDm'],
+  ext:['type-c-main-20260721'],
   int:[
    {id:'1cbkqMfEEu52CRKAX6oHwJkhF48e9VD7w',c:'ห้องนั่งเล่น (Living Room)'},
    {id:'15OyE1gNH-_ZJPyiJ3Apg_lUYpmDWthRK',c:'มุมนั่งเล่น'},
@@ -705,16 +712,16 @@ const TYPES=[
   tag:'จุดเริ่มต้นของบ้านหลังแรก ในราคาที่ใช่',
   price:'2.39',best:true,
   note:'สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย',
-  specs:{bed:3,bath:2,area:96,park:1,floor:2},
-  hero:'type-d-full-house',
-  card:'type-d-full-house',
+  specs:{bed:3,bath:2,area:120,park:2,floor:2},
+  hero:'type-d-main-20260721',
+  card:'type-d-main-20260721',
   feats:[
    {i:'🛋️',t:'ชั้นล่าง Open-plan',d:'รวม Living · มุมทำงาน · ทานข้าว ไว้ในพื้นที่เดียวอย่างลงตัว'},
    {i:'🛏️',t:'มาสเตอร์ชั้นบน',d:'ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน เป็นส่วนตัว'},
    {i:'🧩',t:'ปรับใช้พื้นที่ได้ยืดหยุ่น',d:'จัดสเปซได้ตามไลฟ์สไตล์ โดยไม่ต้องก่อผนังเพิ่ม'},
-   {i:'💚',t:'เริ่มต้น 2.39 ล้าน',d:'เหมาะกับคู่รักเริ่มต้นและผู้ซื้อบ้านหลังแรก'}
+   {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'พื้นที่หน้าบ้านรองรับการใช้งานประจำวันได้คล่องตัว'}
   ],
-  ext:['1GEfbfAdoILWtPjWf5OD2tqBOiAIwwvdI','1mmQxjvMO3Qseti-psfeGddaQtqROO3XI','1vBBaj_nbCYCE5siKLlNSp40c--Vbmg8h','1__kT33m2mXEzXN7YN9chGafE_9r3asdV','1ujTuhlk_LUOdWvlNokqtRTqaGTo8qnbr'],
+  ext:['type-d-main-20260721','1mmQxjvMO3Qseti-psfeGddaQtqROO3XI','1vBBaj_nbCYCE5siKLlNSp40c--Vbmg8h','1__kT33m2mXEzXN7YN9chGafE_9r3asdV','1ujTuhlk_LUOdWvlNokqtRTqaGTo8qnbr'],
   int:[
    {id:'1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU',c:'ห้องนั่งเล่น'},
    {id:'1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i',c:'ห้องครัว (ชั้น 1)'},
@@ -778,6 +785,7 @@ function chipRow(s){
 function galItem(id,cap,spanCls){
   const d=document.createElement('div');
   d.className='gitem'+(spanCls?(' '+spanCls):'');
+  if(String(id).includes('-main-20260721')) d.classList.add('fit-contain');
   const im=document.createElement('img');attachImg(im,id,1400);im.alt=cap||'';
   d.appendChild(im);
   d.insertAdjacentHTML('beforeend','<div class="zoom">⤢</div>'+(cap?'<div class="cap">'+cap+'</div>':''));
