@@ -141,6 +141,9 @@ section{position:relative}
 .tcard:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
 .tcard-img{position:relative;aspect-ratio:16/11;overflow:hidden;background:#F2F2F4}
 .tcard-img img{width:100%;height:100%;object-fit:contain;object-position:center center;transition:transform .9s var(--ease)}
+.tcard.type-a .tcard-img img{object-fit:cover;object-position:center 38%}
+.tcard.type-b .tcard-img img{object-fit:cover;object-position:center 60%}
+.tcard.type-d .tcard-img img{object-fit:cover;object-position:center center}
 .tcard:hover .tcard-img img{transform:none}
 .tcard-img::before{content:"";position:absolute;inset:0;z-index:2;background:linear-gradient(112deg,transparent 0 38%,rgba(255,255,255,.46) 48%,transparent 58%);opacity:0;transform:translateX(-120%);pointer-events:none}
 .tcard:hover .tcard-img::before{animation:imgSheen 1.05s var(--ease)}
@@ -175,6 +178,9 @@ section{position:relative}
 .dt-jump a:hover{color:var(--green)}
 .dt-hero{position:relative;height:78vh;min-height:520px;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
 .dt-hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;background:#000}
+.dt-hero.type-a img.bg{object-fit:cover;object-position:center 31%}
+.dt-hero.type-b img.bg{object-fit:cover;object-position:center 58%}
+.dt-hero.type-d img.bg{object-fit:cover;object-position:center center}
 .dt-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08) 0%,rgba(0,0,0,.10) 40%,rgba(0,0,0,.72) 100%)}
 .dt-hero-inner{position:relative;z-index:2;padding-bottom:54px}
 .dt-hero .c{font-family:var(--serif);letter-spacing:.34em;font-size:15px;opacity:.9}
@@ -472,10 +478,10 @@ section{position:relative}
         </ul>
         <div class="loc-map reveal from-right">
           <iframe class="map-frame" loading="lazy" title="แผนที่โครงการวันเวลา อมตะ ชลบุรี"
-            src="https://www.openstreetmap.org/export/embed.html?bbox=100.9846%2C13.4330%2C101.0046%2C13.4530&layer=mapnik&marker=13.4429775%2C100.9945572"></iframe>
+            src="https://www.openstreetmap.org/export/embed.html?bbox=100.9771%2C13.4149%2C100.9971%2C13.4349&layer=mapnik&marker=13.424876%2C100.9870736"></iframe>
           <div class="map-cta">
             <div><b>นำทางสู่โครงการ</b><br/><span>89 หมู่ 1 ต.คลองตำหรุ อ.เมืองชลบุรี</span></div>
-            <a class="btn btn-dark" href="https://www.google.com/maps/dir/?api=1&destination=13.4429775,100.9945572" target="_blank" rel="noopener">🧭 นำทางด้วย Google Maps</a>
+            <a class="btn btn-dark" href="https://maps.app.goo.gl/WNzFiHPwbCsTXGrF6" target="_blank" rel="noopener">🧭 นำทางด้วย Google Maps</a>
           </div>
         </div>
       </div>
@@ -713,15 +719,15 @@ const TYPES=[
   price:'2.39',best:true,
   note:'สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย',
   specs:{bed:3,bath:2,area:120,park:2,floor:2},
-  hero:'type-d-main-20260721',
-  card:'type-d-main-20260721',
+  hero:'type-d-full-house',
+  card:'type-d-full-house',
   feats:[
    {i:'🛋️',t:'ชั้นล่าง Open-plan',d:'รวม Living · มุมทำงาน · ทานข้าว ไว้ในพื้นที่เดียวอย่างลงตัว'},
    {i:'🛏️',t:'มาสเตอร์ชั้นบน',d:'ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน เป็นส่วนตัว'},
    {i:'🧩',t:'ปรับใช้พื้นที่ได้ยืดหยุ่น',d:'จัดสเปซได้ตามไลฟ์สไตล์ โดยไม่ต้องก่อผนังเพิ่ม'},
    {i:'🚗',t:'ที่จอดรถ 2 คัน',d:'พื้นที่หน้าบ้านรองรับการใช้งานประจำวันได้คล่องตัว'}
   ],
-  ext:['type-d-main-20260721','1mmQxjvMO3Qseti-psfeGddaQtqROO3XI','1vBBaj_nbCYCE5siKLlNSp40c--Vbmg8h','1__kT33m2mXEzXN7YN9chGafE_9r3asdV','1ujTuhlk_LUOdWvlNokqtRTqaGTo8qnbr'],
+  ext:['type-d-full-house','1mmQxjvMO3Qseti-psfeGddaQtqROO3XI','1vBBaj_nbCYCE5siKLlNSp40c--Vbmg8h','1__kT33m2mXEzXN7YN9chGafE_9r3asdV','1ujTuhlk_LUOdWvlNokqtRTqaGTo8qnbr'],
   int:[
    {id:'1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU',c:'ห้องนั่งเล่น'},
    {id:'1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i',c:'ห้องครัว (ชั้น 1)'},
@@ -757,7 +763,7 @@ function chipRow(s){
   const g=document.getElementById('typesGrid');
   TYPES.forEach((t,i)=>{
     const card=document.createElement('div');
-    card.className='tcard reveal zoom-in';
+    card.className='tcard reveal zoom-in type-'+t.id;
     card.style.transitionDelay=(i*0.09)+'s';
     card.onclick=()=>openType(t.id);
     card.innerHTML=
@@ -785,7 +791,7 @@ function chipRow(s){
 function galItem(id,cap,spanCls){
   const d=document.createElement('div');
   d.className='gitem'+(spanCls?(' '+spanCls):'');
-  if(String(id).includes('-main-20260721')) d.classList.add('fit-contain');
+  if(String(id)==='type-c-main-20260721') d.classList.add('fit-contain');
   const im=document.createElement('img');attachImg(im,id,1400);im.alt=cap||'';
   d.appendChild(im);
   d.insertAdjacentHTML('beforeend','<div class="zoom">⤢</div>'+(cap?'<div class="cap">'+cap+'</div>':''));
@@ -800,7 +806,7 @@ function buildDetail(t){
   const s=t.specs;
   let html='';
   // hero
-  html+='<div class="dt-hero"><img class="bg" id="dtHeroImg" alt="'+t.name+'"/>'+
+  html+='<div class="dt-hero type-'+t.id+'"><img class="bg" id="dtHeroImg" alt="'+t.name+'"/>'+
     '<div class="wrap dt-hero-inner">'+
       '<div class="c">'+t.code+'</div>'+
       '<h2>'+t.name+'</h2>'+

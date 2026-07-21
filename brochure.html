@@ -47,6 +47,9 @@ img{display:block}
 .ov-card{background:var(--card);border:1px solid var(--line);border-radius:4mm;overflow:hidden}
 .ov-card .im{height:42mm;position:relative;background:#F2F2F4}
 .ov-card .im img{width:100%;height:100%;object-fit:contain;object-position:center center}
+.ov-card.type-a .im img{object-fit:cover;object-position:center 38%}
+.ov-card.type-b .im img{object-fit:cover;object-position:center 60%}
+.ov-card.type-d .im img{object-fit:cover;object-position:center center}
 .ov-card .badge{position:absolute;top:3mm;left:3mm;background:var(--green);color:var(--cream-soft);font-size:8px;font-weight:600;letter-spacing:.06em;padding:1.5mm 3mm;border-radius:6mm}
 .ov-card .code{position:absolute;bottom:2.5mm;left:3.5mm;color:#fff}
 .ov-card .code .c{font-family:var(--serif);font-size:8.5px;letter-spacing:.3em;opacity:.9}
@@ -61,6 +64,9 @@ img{display:block}
 /* type detail page */
 .t-hero{height:92mm;position:relative;border-radius:4mm;overflow:hidden;background:var(--sage-soft)}
 .t-hero img{width:100%;height:100%;object-fit:contain;object-position:center center;background:#000}
+.t-hero.type-a img{object-fit:cover;object-position:center 31%}
+.t-hero.type-b img{object-fit:cover;object-position:center 58%}
+.t-hero.type-d img{object-fit:cover;object-position:center center}
 .t-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,transparent 42%,rgba(0,0,0,.82))}
 .t-hero .tag{position:absolute;left:7mm;bottom:6mm;color:#fff;z-index:2}
 .t-hero .tag .c{font-family:var(--serif);letter-spacing:.32em;font-size:10px;opacity:.92}
@@ -92,6 +98,7 @@ img{display:block}
 .contactbox .row{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:7mm;text-align:center}
 .contactbox .row b{display:block;font-size:8.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-soft);margin-bottom:1.5mm}
 .contactbox .row p{font-size:11px;color:rgba(251,247,238,.95);line-height:1.5}
+.contactbox a{color:var(--cream-soft);text-decoration:underline;text-underline-offset:1.5px}
 .discl{margin-top:7mm;font-size:8.5px;color:var(--muted);text-align:center}
 </style>
 </head>
@@ -116,10 +123,10 @@ img{display:block}
     <div class="phead"><div><div class="eyebrow">ภาพรวมโครงการ</div><h2 class="serif">เลือกแบบบ้านที่ใช่<br>สำหรับครอบครัวคุณ</h2></div><div class="pg">วันเวลา · 01</div></div>
     <p class="lead">โครงการวันเวลา (One Vela) อมตะ ชลบุรี — บ้านคุณภาพ 483 หลัง บนทำเลศักยภาพใกล้นิคมอุตสาหกรรมอมตะซิตี้ ชลบุรี พร้อมส่วนกลางครบครัน ออกแบบบ้าน 4 แบบเพื่อตอบทุกไลฟ์สไตล์</p>
     <div class="ov-grid">
-      <div class="ov-card"><div class="im"><img src="assets/img/type-a-main-20260721.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>165 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/type-b-main-20260721.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/type-c-main-20260721.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
-      <div class="ov-card"><div class="im"><img src="assets/img/type-d-main-20260721.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>120 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
+      <div class="ov-card type-a"><div class="im"><img src="assets/img/type-a-main-20260721.jpg"><div class="code"><div class="c">TYPE A</div><div class="n">ULTRA</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยว 2 ชั้น · Detached</div><div class="specs"><span>3 นอน</span><span>3 น้ำ</span><span>165 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿4.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card type-b"><div class="im"><img src="assets/img/type-b-main-20260721.jpg"><div class="code"><div class="c">TYPE B</div><div class="n">MINUTE</div></div></div><div class="bd"><div class="cat">บ้านเดี่ยวชั้นเดียว · Single-Storey</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>128 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿3.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card type-c"><div class="im"><img src="assets/img/type-c-main-20260721.jpg"><div class="code"><div class="c">TYPE C</div><div class="n">SECOND</div></div></div><div class="bd"><div class="cat">บ้านแฝด · Semi-Detached</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>110 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿2.5 <small>ล้าน</small></div></div></div>
+      <div class="ov-card type-d"><div class="im"><img src="assets/img/type-d-full-house.jpg"><div class="badge">★ ขายดีที่สุด</div><div class="code"><div class="c">TYPE D</div><div class="n">MOMENT</div></div></div><div class="bd"><div class="cat">ทาวน์โฮม 2 ชั้น · Townhome</div><div class="specs"><span>3 นอน</span><span>2 น้ำ</span><span>120 ตร.ม.</span><span>จอด 2 คัน</span></div><div class="pr">เริ่ม ฿2.39 <small>ล้าน</small></div></div></div>
     </div>
   </div>
 </section>
@@ -153,7 +160,7 @@ img{display:block}
       <div class="row">
         <div><b>โทรศัพท์</b><p>092-787-4222<br>09:00–18:00 ทุกวัน</p></div>
         <div><b>LINE / อีเมล</b><p>@605odwus<br>twobuild.d@gmail.com</p></div>
-        <div><b>สำนักงานขาย</b><p>89 หมู่ 1 ต.คลองตำหรุ<br>อ.เมืองชลบุรี ชลบุรี</p></div>
+        <div><b>สำนักงานขาย</b><p>89 หมู่ 1 ต.คลองตำหรุ<br><a href="https://maps.app.goo.gl/WNzFiHPwbCsTXGrF6">เปิด Google Maps</a></p></div>
       </div>
     </div>
     <div class="discl">© 2026 บริษัท ทู บิลด์ ดีเวลลอปเม้นท์ จำกัด · ใบอนุญาตจัดสรรเลขที่ 78/2568 · ภาพประกอบเพื่อการนำเสนอ รายละเอียดอาจเปลี่ยนแปลงได้</div>
@@ -174,7 +181,7 @@ const T={
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['110','ตร.ม.'],['2','จอดรถ'],['2','ชั้น']],
     feats:[['ดีไซน์ผนังร่วมอัจฉริยะ','วางห้องนอนห่างผนังร่วม ลดเสียงรบกวน'],['ห้องนั่งเล่นหันหน้าบ้าน','รับแสงและลมธรรมชาติ'],['ทางเข้าแยกเป็นสัดส่วน','สวนหน้าบ้านเป็นส่วนตัว'],['เริ่มต้น 2.5 ล้าน','บ้านเดี่ยวในงบที่จับต้องได้']],
     th:[['1cbkqMfEEu52CRKAX6oHwJkhF48e9VD7w','ห้องนั่งเล่น'],['1xQCzPuwYwfJF85IokL1kSY8OCk9ONvZG','ห้องครัว'],['1RleMStgY33zYf8s3Ab5UWyABkhflIxBr','ห้องนอนมาสเตอร์']]},
- d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'type-d-main-20260721',best:1,
+ d:{c:'TYPE D',n:'MOMENT',cat:'ทาวน์โฮม 2 ชั้น · Townhome',price:'2.39',pg:'05',hero:'type-d-full-house',best:1,
     specs:[['3','ห้องนอน'],['2','ห้องน้ำ'],['120','ตร.ม.'],['2','จอดรถ'],['2','ชั้น']],
     feats:[['ชั้นล่าง Open-plan','รวม Living · ทำงาน · ทานข้าว ในที่เดียว'],['มาสเตอร์ชั้นบน','ห้องนอนใหญ่ชั้นบนเป็นสัดส่วน'],['ปรับใช้พื้นที่ยืดหยุ่น','ไม่ต้องก่อผนังเพิ่ม'],['เริ่ม 2.39 ล้าน','สอบถามโปรโมชั่นธนาคารกับฝ่ายขาย']],
     th:[['1a0PTQY1VLGPR_gP85gSwmI4rlXNyP_iU','ห้องนั่งเล่น'],['1d_6FrJBfiK3Vjlhm0QA8RWb0z7yhbS3i','ห้องครัว'],['1jPIcHBHYtbwg2j-y4-oomig9h_ccPwQ1','ห้องนอนมาสเตอร์']]}
@@ -183,7 +190,7 @@ const IMG=id=>'assets/img/'+id+'.jpg';
 document.querySelectorAll('.page[data-type]').forEach(p=>{
   const t=T[p.dataset.type];
   p.innerHTML='<div class="pad">'+
-    '<div class="t-hero"><img src="'+IMG(t.hero)+'">'+
+    '<div class="t-hero type-'+p.dataset.type+'"><img src="'+IMG(t.hero)+'">'+
       '<div class="tag"><div class="c">'+t.c+(t.best?' · ★ ขายดีที่สุด':'')+'</div><div class="n">'+t.n+'</div><div class="cat">'+t.cat+'</div></div>'+
       '<div class="pricebox"><div class="l">ราคาเริ่มต้น</div><div class="v">฿'+t.price+' ล้าน</div></div>'+
     '</div>'+
